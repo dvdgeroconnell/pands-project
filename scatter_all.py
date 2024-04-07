@@ -1,3 +1,4 @@
+# Function to output a scatter plot of each pair of variables
 
 import matplotlib.pyplot as plt
 
