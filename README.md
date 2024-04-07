@@ -18,9 +18,13 @@ The raw dataset in useable csv format was downloaded from [here](https://raw.git
 Note to self - review this - https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes
 
 
-## References
+## General References
 1. [iris dataset wikipedia page](https://en.wikipedia.org/wiki/Iris_flower_data_set)
 2. 
+3.
+## Code References
+1. [matplotlib subplots page](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subplots_demo.html)
+2.
 3.
 
 ****
