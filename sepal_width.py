@@ -26,6 +26,6 @@ def plot_sepal_width(setosa, versicolor, virginica):
     fig.suptitle("Sepal Widths\n", fontsize=14, fontweight='bold')
 
     # Show the plot
-    plt.show()
+    plt.savefig('hist_sepal_width.png')
 
     return

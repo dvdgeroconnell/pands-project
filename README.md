@@ -12,7 +12,7 @@ This summary was derived from various sources, notably [1], [2]
 More information may be found in reference 4.
 
 ## Source
-The raw dataset in useable csv format was downloaded from [here](https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv). 
+The raw dataset in useable csv format was downloaded from [here](https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv). The raw csv file has already undergone some cleanup, including the varieties being presented simply as setosa, versicolor and vigginica.
 
 
 Note to self - review this - https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes
@@ -24,7 +24,7 @@ Note to self - review this - https://docs.github.com/en/repositories/managing-yo
 3.
 ## Code References
 1. [matplotlib subplots page](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subplots_demo.html)
-2.
+2. [match/case statement syntax](https://www.datacamp.com/tutorial/python-switch-case)
 3.
 
 ****

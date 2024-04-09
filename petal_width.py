@@ -25,7 +25,7 @@ def plot_petal_width(setosa, versicolor, virginica):
     # Set the overall title for the figure
     fig.suptitle("Petal Widths\n", fontsize=14, fontweight='bold')
 
-    # Show the plot
-    plt.show()
+    # Save the plot
+    plt.savefig('hist_petal_width.png')
 
     return

@@ -26,6 +26,6 @@ def plot_sepal_length(setosa, versicolor, virginica):
     fig.suptitle("Sepal Lengths\n", fontsize=14, fontweight='bold')
 
     # Show the plot
-    plt.show()
+    plt.savefig('hist_sepal_length.png')
 
     return

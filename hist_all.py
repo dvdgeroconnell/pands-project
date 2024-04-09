@@ -23,8 +23,9 @@ def plot_all(setosa, versicolor, virginica):
     versicolor_swth = versicolor['sepal_width']
     virginica_swth = virginica['sepal_width']
 
-    # Create a figure with 3 Axes (subplots), one for each variety 
-    fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(12,9), sharex=True, sharey=True)
+    # Create a figure with 12 axes (subplots), one for each variable across each species
+    # Use a common x-scale across columns and y-scale across rows for easier comparison
+    fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(12,9), sharex='col', sharey='row')
 
     #Plot petal lengths as the first column
 
@@ -110,14 +111,14 @@ def plot_all(setosa, versicolor, virginica):
         ax.set_xlabel('Sepal Width (cm)', fontsize=9)
         ax.set_ylabel('Number', fontsize=9)
 
-    # Only add the labels around the outer axes in the figure for readibility 
+    # Only add the labels around the outer axes in the figure for readability 
     for ax in fig.get_axes():
         ax.label_outer()
 
     # Set the overall title for the figure
     fig.suptitle("Iris dataset\n", fontsize=12, fontweight='bold')
 
-    # Show the plot
-    plt.show()
+    # Save the plot
+    plt.savefig('hist_all.png')
 
     return

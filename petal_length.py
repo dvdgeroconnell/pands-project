@@ -25,7 +25,7 @@ def plot_petal_length(setosa, versicolor, virginica):
     # Set the overall title for the figure
     fig.suptitle("Petal Lengths\n", fontsize=14, fontweight='bold')
 
-    # Show the plot
-    plt.show()
+    # Save the plot
+    plt.savefig('hist_petal_length.png')
 
     return
