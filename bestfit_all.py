@@ -19,7 +19,6 @@
 #  - NumPy polyfit - https://numpy.org/doc/1.26/reference/generated/numpy.polyfit.html#numpy.polyfit
 #  - https://stackoverflow.com/questions/31568874/how-to-change-the-line-color-in-seaborn-linear-regression-jointplot
 #  - https://stackoverflow.com/questions/74971910/how-to-remove-confidance-interval-in-pairplot
-
 #
 # ***************************************************************************************************
 
@@ -192,10 +191,14 @@ def bestfit_all(iris):
 
     # Show the plot - fig.show() will draw and continue, plt.show() blocks
     plt.savefig(BESTFIT_PLT)
-    print("saved")
 
     # Now draw a scatter plot for the dataset with Seaborn - it is one line versus all of the code above
+    # Density plots on the diagonal show the spread of values
+    # Just draw the 6 individual plots (corner=True), do not repeat them above the diagonal
     sns.pairplot(iris, hue="species", kind='reg', corner=True, plot_kws={'line_kws':{'color':'black'},'ci':None})
     plt.savefig(BESTFIT_SNS)
+
+    print("Scatter plots with best fit lines written to", BESTFIT_PLT, "(Pyplot) and", BESTFIT_SNS, "(Seaborn)")
+    x = input("Press 'Return' to continue")
 
     return

@@ -47,11 +47,7 @@ IRIS_FILE = "iris.csv"
 try:
     iris = pd.read_csv(IRIS_FILE)
 
-    # Create a dataframe with the 4 petal and sepal columns for each species
-    setosa = iris.loc[iris['species']=="setosa", "sepal_length":"petal_width"]
-    versicolor = iris.loc[iris['species']=="versicolor", "sepal_length":"petal_width"]
-    virginica = iris.loc[iris['species']=="virginica", "sepal_length":"petal_width"]
-
+    # Display the menu - use a while loop to keep the program running until exit or invalid entry
     run = True
     while (run):
         choice = menu.do_menu()
@@ -68,7 +64,7 @@ try:
 
             case 2:
                 # Draw the plots for all variables in one figure
-                ha.plot_all(setosa, versicolor, virginica)
+                ha.plot_all(iris)
 
             case 3:
                 # Draw the petal lengths histogram
@@ -88,7 +84,7 @@ try:
 
             case 5:
                 # Pandas correlation function here:
-                wc.iris_corr(iris, setosa, versicolor, virginica)
+                wc.iris_corr(iris)
 
             case 6:
                 # Experimental code for best fit here

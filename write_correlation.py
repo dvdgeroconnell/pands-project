@@ -22,7 +22,11 @@ CORRELATION_IRIS = "iris_correlation.txt"
 HEATMAP_IRIS = "corr_iris.png"
 
 # Define the function that will be called from the main program
-def iris_corr(iris, setosa, versicolor, virginica):
+def iris_corr(iris):
+
+    setosa = iris.loc[iris['species']=="setosa", "sepal_length":"petal_width"]
+    versicolor = iris.loc[iris['species']=="versicolor", "sepal_length":"petal_width"]
+    virginica = iris.loc[iris['species']=="virginica", "sepal_length":"petal_width"]
 
     # Create the figure and axes for the heatmap
     fig, axes = plt.subplots(nrows=1, ncols=4, figsize=(12,6), sharey='row')
@@ -73,7 +77,6 @@ def iris_corr(iris, setosa, versicolor, virginica):
                 # Draw the correlation heatmap for the virginica species (with color bar) and write all to file
                 sns.heatmap(corr, annot=True, fmt=".2f", linewidth=.5, ax=axes[3], cbar=True)
                 axes[3].set_title("virginica")
-
 
                 # Configure the x and y axis labels
                 for i in range(4):

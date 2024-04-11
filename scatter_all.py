@@ -113,7 +113,9 @@ def scatter_all(iris):
     # Updated to save to file
     plt.savefig(SCATTER_PLT)
 
-    # Now using Seaborn - very simple by comparison! Density plots show the spread of values.
+    # Now using Seaborn - one line versus the code above
+    # Density plots on the diagonal show the spread of values
+    # Just draw the 6 individual plots (corner=True), do not repeat them above the diagonal
     sns.pairplot(iris,hue="species", corner=True)
     plt.savefig(SCATTER_SNS)
 

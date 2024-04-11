@@ -20,27 +20,27 @@ import matplotlib.pyplot as plt
 HIST_FILE = 'hist_all.png'
 
 # Define the function that will be called from the main program
-def plot_all(setosa, versicolor, virginica):
+def plot_all(iris):
 
-    # Extract the 4 sets of data - first, petal length
-    setosa_plen = setosa['petal_length']
-    versicolor_plen = versicolor['petal_length']
-    virginica_plen = virginica['petal_length']
+    # First, extract the petal length by species from the iris dataset
+    setosa_plen = iris.loc[iris['species']=="setosa", 'petal_length']
+    versicolor_plen = iris.loc[iris['species']=="versicolor", 'petal_length']
+    virginica_plen = iris.loc[iris['species']=="virginica", 'petal_length']
 
-    # Next, petal width
-    setosa_pwth = setosa['petal_width']
-    versicolor_pwth = versicolor['petal_width']
-    virginica_pwth = virginica['petal_width']
+    # Next, extract the petal width by species from the iris dataset
+    setosa_pwth = iris.loc[iris['species']=="setosa", 'petal_width']
+    versicolor_pwth = iris.loc[iris['species']=="versicolor", 'petal_width']
+    virginica_pwth = iris.loc[iris['species']=="virginica", 'petal_width']
 
-    # Then, sepal length
-    setosa_slen = setosa['sepal_length']
-    versicolor_slen = versicolor['sepal_length']
-    virginica_slen = virginica['sepal_length']
+    # Then, extract the sepal length by species from the iris dataset
+    setosa_slen = iris.loc[iris['species']=="setosa", 'sepal_length']
+    versicolor_slen = iris.loc[iris['species']=="versicolor", 'sepal_length']
+    virginica_slen = iris.loc[iris['species']=="virginica", 'sepal_length']
 
-    # Finally, sepal width
-    setosa_swth = setosa['sepal_width']
-    versicolor_swth = versicolor['sepal_width']
-    virginica_swth = virginica['sepal_width']
+    # Finally, extract the sepal width by species from the iris dataset
+    setosa_swth = iris.loc[iris['species']=="setosa", 'sepal_width']
+    versicolor_swth = iris.loc[iris['species']=="versicolor", 'sepal_width']
+    virginica_swth = iris.loc[iris['species']=="virginica", 'sepal_width']
 
     # Create a figure with 12 axes (subplots), one for each variable across each species
     # Use a common x-scale across columns and y-scale across rows for easier comparison
