@@ -1,14 +1,34 @@
+# petal.py (PANDS project)
+#
+# Python functions to create histograms of the the petal length and petal width by species. They are then
+# written to a file.
+#
+# Author: David O'Connell
+#
+# Reference(s)
+#  - Programming and Scripting lecture series - week 07, 08 (files, plotting)
+#  - Principles of Data Analytics lecture series - week 08 (iris dataset)
+#  - Matplotlib documentation - https://matplotlib.org/stable/users/index.html 
+#  - Pandas methods - https://pandas.pydata.org/docs/reference/index.html
+#
+# ***************************************************************************************************
 
+# Import the required libraries for visualization
 import matplotlib.pyplot as plt
 
-def plot_petal_length(setosa, versicolor, virginica):
+# Define file name where the histograms will be saved - can be easily moved to a config file 
+HIST_PL = 'hist_petal_length.png'
+HIST_PW = 'hist_petal_width.png'
+
+# Define the function to draw the petal length histograms that will be called from the main program
+def plot_petal_length(iris):
 
     # Extract the petal length
-    setosa_plen = setosa['petal_length']
-    versicolor_plen = versicolor['petal_length']
-    virginica_plen = virginica['petal_length']
+    setosa_plen = iris.loc[iris['species']=="setosa", 'petal_length']
+    versicolor_plen = iris.loc[iris['species']=="versicolor", 'petal_length']
+    virginica_plen = iris.loc[iris['species']=="virginica", 'petal_length']
 
-    # Create a figure with 3 Axes (subplots), one for each variety 
+    # Create a figure with 3 axes (subplots), one for each variety 
     fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=(12,4))
 
     # Create histograms for setosa, versicolor and virginica
@@ -31,18 +51,19 @@ def plot_petal_length(setosa, versicolor, virginica):
     fig.suptitle("Petal Lengths - Histograms and Density Plots\n", fontsize=14, fontweight='bold')
 
     # Save the plot
-    plt.savefig('hist_petal_length.png')
-
+    plt.savefig(HIST_PL)
+    print("Petal length histograms and kde plots written to", HIST_PL)
     return
 
-def plot_petal_width(setosa, versicolor, virginica):
+# Define the function to draw the petal width histograms that will be called from the main program
+def plot_petal_width(iris):
 
     # Extract the petal width
-    setosa_pwth = setosa['petal_width']
-    versicolor_pwth = versicolor['petal_width']
-    virginica_pwth = virginica['petal_width']
+    setosa_pwth = iris.loc[iris['species']=="setosa", 'petal_width']
+    versicolor_pwth = iris.loc[iris['species']=="versicolor", 'petal_width']
+    virginica_pwth = iris.loc[iris['species']=="virginica", 'petal_width']
 
-    # Create a figure with 3 Axes (subplots), one for each variety 
+    # Create a figure with 3 axes (subplots), one for each variety 
     fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=(12,4))
 
     # Create histograms for setosa, versicolor and virginica
@@ -65,6 +86,7 @@ def plot_petal_width(setosa, versicolor, virginica):
     fig.suptitle("Petal Widths - Histograms and Density Plots\n", fontsize=14, fontweight='bold')
 
     # Save the plot
-    plt.savefig('hist_petal_width.png')
+    plt.savefig(HIST_PW)
+    print("Petal width histograms and kde plots written to", HIST_PW)
 
     return

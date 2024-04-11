@@ -1,5 +1,16 @@
+# menu.py (PANDS project)
+#
+# A Python function to draw the menu of options, check the entered choice is a valid integer and returns
+# the value to the main program. Range checking is done by the main program.
+#
+# Author: David O'Connell
+#
+# Reference(s)
+#  - Programming and Scripting lecture series - week 09 (error handling) and general
+#
+# ***************************************************************************************************
 
-
+# Define the function that will be called from the main program
 def do_menu():
 
     # The do_menu() function just draws the menu and returns the choice
@@ -15,6 +26,8 @@ def do_menu():
     # Check that the entered value is an integer - range check will be handled by the main program
     try:
         choice = int(input("Enter choice: "))
+
+    # Handle non-integer entries gracefully
     except ValueError:
         print("Invalid entry - ", end='')
         choice = 0

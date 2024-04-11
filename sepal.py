@@ -1,14 +1,34 @@
+# sepal.py (PANDS project)
+#
+# Python functions to create histograms of the the sepal length and sepal width by species. They are then
+# written to a file.
+#
+# Author: David O'Connell
+#
+# Reference(s)
+#  - Programming and Scripting lecture series - week 07, 08 (files, plotting)
+#  - Principles of Data Analytics lecture series - week 08 (iris dataset)
+#  - Matplotlib documentation - https://matplotlib.org/stable/users/index.html 
+#  - Pandas methods - https://pandas.pydata.org/docs/reference/index.html
+#
+# ***************************************************************************************************
 
+# Import the required libraries for visualization
 import matplotlib.pyplot as plt
 
-def plot_sepal_length(setosa, versicolor, virginica):
+# Define file name where the histograms will be saved - can be easily moved to a config file 
+HIST_SL = 'hist_sepal_length.png'
+HIST_SW = 'hist_sepal_width.png'
+
+# Define the function to draw the sepal length histograms that will be called from the main program
+def plot_sepal_length(iris):
 
     # Extract the sepal length
-    setosa_slen = setosa['sepal_length']
-    versicolor_slen = versicolor['sepal_length']
-    virginica_slen = virginica['sepal_length']
+    setosa_slen = iris.loc[iris['species']=="setosa", 'sepal_length']
+    versicolor_slen = iris.loc[iris['species']=="versicolor", 'sepal_length']
+    virginica_slen = iris.loc[iris['species']=="virginica", 'sepal_length']
 
-    # Create a figure with 3 Axes (subplots), one for each variety 
+    # Create a figure with 3 axes (subplots), one for each variety 
     fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=(12,4))
 
     # Create histograms for setosa, versicolor and virginica
@@ -31,18 +51,20 @@ def plot_sepal_length(setosa, versicolor, virginica):
     fig.suptitle("Sepal Lengths - Histograms and Density Plots\n", fontsize=14, fontweight='bold')
 
     # Show the plot
-    plt.savefig('hist_sepal_length.png')
+    plt.savefig(HIST_SL)
+    print("Sepal length histograms and kde plots written to", HIST_SL)
 
     return
 
-def plot_sepal_width(setosa, versicolor, virginica):
+# Define the function to draw the sepal width histograms that will be called from the main program
+def plot_sepal_width(iris):
 
     # Extract the sepal width
-    setosa_swth = setosa['sepal_width']
-    versicolor_swth = versicolor['sepal_width']
-    virginica_swth = virginica['sepal_width']
+    setosa_swth = iris.loc[iris['species']=="setosa", 'sepal_width']
+    versicolor_swth = iris.loc[iris['species']=="versicolor", 'sepal_width']
+    virginica_swth = iris.loc[iris['species']=="virginica", 'sepal_width']
 
-    # Create a figure with 3 Axes (subplots), one for each variety 
+    # Create a figure with 3 axes (subplots), one for each variety 
     fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=(12,4))
 
     # Create histograms for setosa, versicolor and virginica
@@ -65,6 +87,7 @@ def plot_sepal_width(setosa, versicolor, virginica):
     fig.suptitle("Sepal Widths - Histograms and Density Plots\n", fontsize=14, fontweight='bold')
 
     # Show the plot
-    plt.savefig('hist_sepal_width.png')
+    plt.savefig(HIST_SW)
+    print("Sepal width histograms and kde plots written to", HIST_SW)
 
     return

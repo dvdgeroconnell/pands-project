@@ -93,7 +93,7 @@ def iris_corr(iris, setosa, versicolor, virginica):
                 f.close()
                 # Print a confirmation message and keep it on screen to allow the user to see it
                 print("Correlation summaries and heatmaps written to", HEATMAP_IRIS)
-                x = input("Press 'return' to continue")    
+                x = input("Press 'Return' to continue")    
 
     except OSError:
         # Handle the exception

@@ -57,6 +57,11 @@ try:
         choice = menu.do_menu()
         match choice:
 
+            case 0:
+                # Exit the program
+                print("Exiting...")
+                run = False
+
             case 1:
                 # Write the overall summary for the dataset, and the summary for each species to a text file
                 ws.summary(iris, "all")
@@ -67,20 +72,19 @@ try:
 
             case 3:
                 # Draw the petal lengths histogram
-                petal.plot_petal_length(setosa, versicolor, virginica)
+                petal.plot_petal_length(iris)
                 # Draw the petal widths histogram
-                petal.plot_petal_width(setosa, versicolor, virginica)
+                petal.plot_petal_width(iris)
                 # Draw the sepal lengths histogram
-                sepal.plot_sepal_length(setosa, versicolor, virginica)
+                sepal.plot_sepal_length(iris)
                 # Draw the sepal widths histogram
-                sepal.plot_sepal_width(setosa, versicolor, virginica)
+                sepal.plot_sepal_width(iris)
+                x = input("Press 'Return' to continue")
 
             case 4:
                 # Draw the scatter plots - function is contained in scatter_all.py
-                sa.scatter_all(setosa, versicolor, virginica)
-                # Now using Seaborn - very simple by comparison! Density plots show the spread of values.
-                sns.pairplot(iris,hue="species")
-                plt.show()
+                # Generate plots with both Matplotlib and Seaborn for comparison
+                sa.scatter_all(iris)
 
             case 5:
                 # Pandas correlation function here:
@@ -88,14 +92,7 @@ try:
 
             case 6:
                 # Experimental code for best fit here
-                bf.bestfit_all(iris, setosa, versicolor, virginica)
-                sns.pairplot(iris,hue="species", kind='reg')
-                plt.show()
-
-            case 0:
-                # Exit the program
-                print("Exiting...")
-                run = False
+                bf.bestfit_all(iris)
 
             case _:
                 # Catch-all for entries other than the ones listed above

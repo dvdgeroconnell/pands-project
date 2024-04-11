@@ -93,7 +93,7 @@ def summary(iris, choice):
             f.close()    
             # Print a confirmation message and keep it on screen to allow the user to see it
             print("Dataset summary written to", FILENAME)
-            x = input("Press 'return' to continue")   
+            x = input("Press 'Return' to continue")   
     
     # Handle the error if the file could not be created / opened
     except OSError:

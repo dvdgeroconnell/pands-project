@@ -1,32 +1,52 @@
-# Function to output a scatter plot of each pair of variables
+# scatter_all.py (PANDS project)
+#
+# A Python function to draw the pairwise scatter plots for the iris dataset variables colour-coded by
+# species. The scatter plots are drawn as a single figure, which is then saved to a file.
+# Scatter plots are drawn using both Matplotlib and Seaborn for comparison.
+#
+# Author: David O'Connell
+#
+# Reference(s)
+#  - Programming and Scripting lecture series - week 07, 08 (files, plotting)
+#  - Principles of Data Analytics lecture series - week 08 (iris dataset)
+#  - Matplotlib documentation - https://matplotlib.org/stable/users/index.html 
+#  - Pandas methods - https://pandas.pydata.org/docs/reference/index.html
+#
+# ***************************************************************************************************
 
+# Import the required libraries for visualization
 import matplotlib.pyplot as plt
+import seaborn as sns
 
-def scatter_all(setosa, versicolor, virginica):
+# Define file names where the scatter plots will be saved - can be easily moved to a config file 
+SCATTER_PLT = 'scatter_plt.png'
+SCATTER_SNS = 'scatter_sns.png'
 
-    # Extract the 4 sets of data, starting with petal length
-    setosa_plen = setosa['petal_length']
-    versicolor_plen = versicolor['petal_length']
-    virginica_plen = virginica['petal_length']
+# Define the function that will be called from the main program
+def scatter_all(iris):
 
-    # Next, petal width
-    setosa_pwth = setosa['petal_width']
-    versicolor_pwth = versicolor['petal_width']
-    virginica_pwth = virginica['petal_width']
+    # First, extract the petal length by species from the iris dataset
+    setosa_plen = iris.loc[iris['species']=="setosa", 'petal_length']
+    versicolor_plen = iris.loc[iris['species']=="versicolor", 'petal_length']
+    virginica_plen = iris.loc[iris['species']=="virginica", 'petal_length']
 
-    # Then, sepal length
-    setosa_slen = setosa['sepal_length']
-    versicolor_slen = versicolor['sepal_length']
-    virginica_slen = virginica['sepal_length']
+    # Next, extract the petal width by species from the iris dataset
+    setosa_pwth = iris.loc[iris['species']=="setosa", 'petal_width']
+    versicolor_pwth = iris.loc[iris['species']=="versicolor", 'petal_width']
+    virginica_pwth = iris.loc[iris['species']=="virginica", 'petal_width']
 
-    # Finally, sepal width
-    setosa_swth = setosa['sepal_width']
-    versicolor_swth = versicolor['sepal_width']
-    virginica_swth = virginica['sepal_width']
+    # Then, extract the sepal length by species from the iris dataset
+    setosa_slen = iris.loc[iris['species']=="setosa", 'sepal_length']
+    versicolor_slen = iris.loc[iris['species']=="versicolor", 'sepal_length']
+    virginica_slen = iris.loc[iris['species']=="virginica", 'sepal_length']
 
-    # Create a figure with 6 Axes (subplots), as the number of pairwise scatterplots for 4 variables
+    # Finally, extract the sepal width by species from the iris dataset
+    setosa_swth = iris.loc[iris['species']=="setosa", 'sepal_width']
+    versicolor_swth = iris.loc[iris['species']=="versicolor", 'sepal_width']
+    virginica_swth = iris.loc[iris['species']=="virginica", 'sepal_width']
+
+    # Create a figure with 6 axes (subplots), as the number of pairwise scatterplots for 4 variables
     # will be (4 x 3)/2 = 6 in total
-    # fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(12,9), sharex=True, sharey=True)
     fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(12,9), sharex='col')
 
     # Scatter plot for petal length vs petal width
@@ -88,6 +108,16 @@ def scatter_all(setosa, versicolor, virginica):
                  fontsize=12, fontweight='bold')
 
     # Show the plot - fig.show() will draw and continue, plt.show() blocks
-    plt.show()
-    #plt.savefig("scat.png")
+    # plt.show()
+
+    # Updated to save to file
+    plt.savefig(SCATTER_PLT)
+
+    # Now using Seaborn - very simple by comparison! Density plots show the spread of values.
+    sns.pairplot(iris,hue="species", corner=True)
+    plt.savefig(SCATTER_SNS)
+
+    print("Scatter plots written to", SCATTER_PLT, "(Pyplot) and", SCATTER_SNS, "(Seaborn)")
+    x = input("Press 'Return' to continue")
+
     return

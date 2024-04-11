@@ -1,14 +1,14 @@
-# write_summary.py (PANDS project)
+# hist_all.py (PANDS project)
 #
-# A Python function to calculate some key statistics for the iris dataset overall and by species. They
-# are then written to a file.
+# A Python function to draw the histograms for the iris dataset variables by species. The histograms
+# are drawn as a single figure, which is then saved to a file.
 #
 # Author: David O'Connell
 #
 # Reference(s)
-#  - Programming and Scripting lecture series - week 07 (files)
+#  - Programming and Scripting lecture series - week 07, 08 (files, plotting)
 #  - Principles of Data Analytics lecture series - week 08 (iris dataset)
-#  - Seaborn documentation / tutorials - https://seaborn.pydata.org/tutorial/function_overview.html
+#  - Matplotlib documentation - https://matplotlib.org/stable/users/index.html 
 #  - Pandas methods - https://pandas.pydata.org/docs/reference/index.html
 #
 # ***************************************************************************************************
@@ -16,7 +16,7 @@
 # Import the required libraries for visualization
 import matplotlib.pyplot as plt
 
-# Define file name where the statistical data will be saved - can be easily moved to a config file 
+# Define file name where the histograms will be saved - can be easily moved to a config file 
 HIST_FILE = 'hist_all.png'
 
 # Define the function that will be called from the main program
@@ -137,7 +137,7 @@ def plot_all(setosa, versicolor, virginica):
         # Save the plot
         plt.savefig(HIST_FILE)
         print("Histograms written to", HIST_FILE)
-        x = input("Press 'return' to continue")
+        x = input("Press 'Return' to continue")
 
     # Handle the error if the file could not be created / opened
     except OSError:
