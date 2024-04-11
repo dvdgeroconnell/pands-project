@@ -25,7 +25,8 @@ Note to self - review this - https://docs.github.com/en/repositories/managing-yo
 ## Code References
 1. [matplotlib subplots page](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subplots_demo.html)
 2. [match/case statement syntax](https://www.datacamp.com/tutorial/python-switch-case)
-3.
+3. [Pandas tutorials](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html)
+
 
 ****
 #### End

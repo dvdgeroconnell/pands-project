@@ -1,0 +1,31 @@
+
+Correlation summary for all iris species
+              petal_length  petal_width  sepal_length  sepal_width
+petal_length      1.000000     0.962865      0.871754    -0.428440
+petal_width       0.962865     1.000000      0.817941    -0.366126
+sepal_length      0.871754     0.817941      1.000000    -0.117570
+sepal_width      -0.428440    -0.366126     -0.117570     1.000000
+Note: these correlations are not so meaningful as they are calculated across
+3 different species. It is more meaningful to look at the separate correlations
+for each species separately, and then compare the summaries.
+
+Correlation summary for the setosa species
+              petal_length  petal_width  sepal_length  sepal_width
+petal_length      1.000000     0.331630      0.267176     0.177700
+petal_width       0.331630     1.000000      0.278098     0.232752
+sepal_length      0.267176     0.278098      1.000000     0.742547
+sepal_width       0.177700     0.232752      0.742547     1.000000
+
+Correlation summary for the versicolor species
+              petal_length  petal_width  sepal_length  sepal_width
+petal_length      1.000000     0.786668      0.754049     0.560522
+petal_width       0.786668     1.000000      0.546461     0.663999
+sepal_length      0.754049     0.546461      1.000000     0.525911
+sepal_width       0.560522     0.663999      0.525911     1.000000
+
+Correlation summary for the virginica species
+              petal_length  petal_width  sepal_length  sepal_width
+petal_length      1.000000     0.322108      0.864225     0.401045
+petal_width       0.322108     1.000000      0.281108     0.537728
+sepal_length      0.864225     0.281108      1.000000     0.457228
+sepal_width       0.401045     0.537728      0.457228     1.000000

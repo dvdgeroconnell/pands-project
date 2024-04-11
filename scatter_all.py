@@ -87,7 +87,7 @@ def scatter_all(setosa, versicolor, virginica):
     fig.suptitle("Iris dataset (setosa=red, versicolor=blue, virginica=green)\n",
                  fontsize=12, fontweight='bold')
 
-    # Show the plot
+    # Show the plot - fig.show() will draw and continue, plt.show() blocks
     plt.show()
-
+    #plt.savefig("scat.png")
     return

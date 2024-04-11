@@ -1,6 +1,25 @@
+# write_summary.py (PANDS project)
+#
+# A Python function to calculate some key statistics for the iris dataset overall and by species. They
+# are then written to a file.
+#
+# Author: David O'Connell
+#
+# Reference(s)
+#  - Programming and Scripting lecture series - week 07 (files)
+#  - Principles of Data Analytics lecture series - week 08 (iris dataset)
+#  - Seaborn documentation / tutorials - https://seaborn.pydata.org/tutorial/function_overview.html
+#  - Pandas methods - https://pandas.pydata.org/docs/reference/index.html
+#
+# ***************************************************************************************************
 
+# Import the required libraries for visualization
 import matplotlib.pyplot as plt
 
+# Define file name where the statistical data will be saved - can be easily moved to a config file 
+HIST_FILE = 'hist_all.png'
+
+# Define the function that will be called from the main program
 def plot_all(setosa, versicolor, virginica):
 
     # Extract the 4 sets of data - first, petal length
@@ -27,85 +46,81 @@ def plot_all(setosa, versicolor, virginica):
     # Use a common x-scale across columns and y-scale across rows for easier comparison
     fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(12,9), sharex='col', sharey='row')
 
-    #Plot petal lengths as the first column
-
-    # Histogram for setosa
+    # Histogram for setosa petal lengths
     ax1 = axes[0,0]
     ax1.hist(setosa_plen, label="setosa", color='red', edgecolor = 'black')
-    ax1.set_title('Petal Lengths')
 
-    # Histogram for versicolor
+    # Histogram for versicolor petal lengths
     ax2 = axes[1,0]
     ax2.hist(versicolor_plen, label="versicolor", color='blue', edgecolor = 'black')
 
-    # Histogram for virginica
+    # Histogram for virginica petal lengths
     ax3 = axes[2,0]
     ax3.hist(virginica_plen, label="virginica", color='green', edgecolor = 'black')
 
     # Set legend and labels for the first column
+    ax1.set_title('Petal Lengths')
+
     for ax in axes[0:3,0]:
         ax.legend()
         ax.set_xlabel('Petal Length (cm)', fontsize=9)
         ax.set_ylabel('Number', fontsize=9)
 
-    #Plot petal widths as the second column
-
-    # Histogram for setosa
+    # Histogram for setosa petal widths
     ax1 = axes[0,1]
     ax1.hist(setosa_pwth, label="setosa", color='red', edgecolor = 'black')
-    ax1.set_title('Petal Widths')
 
-    # Histogram for versicolor
+    # Histogram for versicolor petal widths
     ax2 = axes[1,1]
     ax2.hist(versicolor_pwth, label="versicolor", color='blue', edgecolor = 'black')
 
-    # Histogram for virginica
+    # Histogram for virginica petal widths
     ax3 = axes[2,1]
     ax3.hist(virginica_pwth, label="virginica", color='green', edgecolor = 'black')
 
     # Set legend and labels for the second column
+    ax1.set_title('Petal Widths')
+
     for ax in axes[0:3,1]:
         ax.legend()
         ax.set_xlabel('Petal Width (cm)', fontsize=9)
         ax.set_ylabel('Number', fontsize=9)
 
-    #Plot sepal lengths as the third column
-
-    # Histogram for setosa
+    # Histogram for setosa sepal lengths
     ax1 = axes[0,2]
     ax1.hist(setosa_slen, label="setosa", color='red', edgecolor = 'black')
-    ax1.set_title('Sepal Lengths')
 
-    # Histogram for versicolor
+    # Histogram for versicolor sepal lengths
     ax2 = axes[1,2]
     ax2.hist(versicolor_slen, label="versicolor", color='blue', edgecolor = 'black')
 
-    # Histogram for virginica
+    # Histogram for virginica sepal lengths
     ax3 = axes[2,2]
     ax3.hist(virginica_slen, label="virginica", color='green', edgecolor = 'black')
 
     # Set legend and labels for the third column
+    ax1.set_title('Sepal Lengths')
+
     for ax in axes[0:3,2]:
         ax.legend()
         ax.set_xlabel('Sepal Length (cm)', fontsize=9)
         ax.set_ylabel('Number', fontsize=9)
 
-    #Plot sepal widths as the fourth column
-
-    # Histogram for setosa
+    # Histogram for setosa sepal widths
     ax1 = axes[0,3]
     ax1.hist(setosa_swth, label="setosa", color='red', edgecolor = 'black')
-    ax1.set_title('Sepal Widths')
 
-    # Histogram for versicolor
+    # Histogram for versicolor sepal widths
     ax2 = axes[1,3]
     ax2.hist(versicolor_swth, label="versicolor", color='blue', edgecolor = 'black')
 
-    # Histogram for virginica
+    # Histogram for virginica sepal widths
     ax3 = axes[2,3]
     ax3.hist(virginica_swth, label="virginica", color='green', edgecolor = 'black')
 
     # Set legend and labels for the fourth column
+    ax1.set_title('Sepal Widths')
+
     for ax in axes[0:3,3]:
         ax.legend()
         ax.set_xlabel('Sepal Width (cm)', fontsize=9)
@@ -116,9 +131,16 @@ def plot_all(setosa, versicolor, virginica):
         ax.label_outer()
 
     # Set the overall title for the figure
-    fig.suptitle("Iris dataset\n", fontsize=12, fontweight='bold')
+    fig.suptitle("Iris dataset histograms\n", fontsize=12, fontweight='bold')
 
-    # Save the plot
-    plt.savefig('hist_all.png')
+    try:
+        # Save the plot
+        plt.savefig(HIST_FILE)
+        print("Histograms written to", HIST_FILE)
+        x = input("Press 'return' to continue")
+
+    # Handle the error if the file could not be created / opened
+    except OSError:
+        print("Error - file could not be created")
 
     return
