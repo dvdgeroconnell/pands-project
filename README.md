@@ -9,14 +9,14 @@ This repository contains the files associated with the Programming and Scripting
 The Iris flower dataset was originally created by botanist Edgar Anderson in 1935 in order to analyse the morphological differences between different species of Iris. It consists of 50 sets of data from each of three species (Iris setosa, Iris versicolor and Iris virginica) across 4 characteristics - petal length, petal width, sepal length and sepal width. This dataset widely used in field of statistical data analysis and machine learning.   
 
 **Figure 1 - Iris Species**  
-![Iris species](.\images\iris_species.png)   
+![Iris species](\images\iris_species.png)   
 Source - [3]
 
 The dataset is often called Fisher's Iris dataset as it was the subject of a 1936 paper, *"The use of multiple measurements in taxonomic problems"* by by the British statistician and biologist Ronald Fisher - Ref [1].
 The dataset contains 150 sets of measurements, consisting of a set of 50 measurements for each of 3 species of iris flowers - setosa, versicolor and virginica. The measurements cover the sepal and petal length and width for each flower in cm. Fisher developed a model, based on the relationships between these 4 characteristics, to uniquely identify each species.
 
 **Figure 2 - Iris Characteristics**  
-![Iris characteristics](.\images\iris_characteristics.png)  
+![Iris characteristics](\images\iris_characteristics.png)  
 Source - [4]
 
 CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=170298 - setosa
