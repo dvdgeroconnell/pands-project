@@ -26,19 +26,13 @@
 # Pandas implements dataframes for working with tabular data
 import pandas as pd
 
-# Import pyplot from matplotlib and seaborn for visualization
-import matplotlib.pyplot as plt
-import seaborn as sns
-
 # Import the files that contain the required functions - stored separately for readibility
 import write_summary as ws
 import hist_all as ha
 import scatter_all as sa
 import bestfit_all as bf
 import write_correlation as wc
-import menu
-import petal
-import sepal
+import menu, petal, sepal
 
 # Create an alias for the file name rather than hardcoding below, makes it easier to move to a config file.
 IRIS_FILE = "iris.csv"
