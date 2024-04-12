@@ -2,11 +2,20 @@
 Programming &amp; Scripting project repo
 
 ## Purpose of this Repository
-This repository contains the files associated with the Programming and Scripting project, the subject of which is an analysis of Fisher's iris data set.
+This repository contains the files associated with the Programming and Scripting final project, the subject of which is an analysis of Fisher's iris data set.
 
 ### Fisher's iris data set
-"The Iris flower dataset is a classic dataset in the field of machine learning and statistical analysis. It was introduced by British statistician and biologist Ronald Fisher in his 1936 paper, *The use of multiple measurements in taxonomic problems*.” See Ref [2].
+
+The Iris flower dataset was originally created by botanist Edgar Anderson in 1935 in order to analyse the morphological differences between different species of Iris. It consists of 50 sets of data from each of three species (Iris setosa, Iris versicolor  and Iris virginica) across 4 characteristics - petal length, petal width, sepal length, sepal width. This dataset widely used in field of data analysis and machine learning. 
+
+![Iris species](\images\image1.png)
+
+The dataset   is often called Fisher;dataset  by the British statistician and biologist Ronald Fisher. He introduced it in his 1936 paper, *The use of multiple measurements in taxonomic problems*.” Ref [1].
 The dataset contains 150 sets of measurements, consisting of 3 sets of 50 measurements across each of 3 species of iris flowers - setosa, versicolor and virginica. The measurements cover the sepal and petal length and width for each flower.
+
+CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=170298 - setosa
+CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=248095 - versicolor
+By Frank Mayfield - originally posted to Flickr as Iris virginica shrevei BLUE FLAG, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=9805580
 
 This summary was derived from various sources, notably [1], [2]
 More information may be found in reference 4.

@@ -1,6 +1,3 @@
-# Function to output a scatter plot of each pair of variables
-# Experimental file for best fit
-
 # bestfit_all.py (PANDS project)
 #
 # A Python function to draw the pairwise scatter plots for the iris dataset variables colour-coded by
