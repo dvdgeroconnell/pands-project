@@ -160,4 +160,4 @@ cython_debug/
 #.idea/
 
 # ignore plot files for now , so as not to fill the repo with temporary plot files
-*.png
+./*.png
