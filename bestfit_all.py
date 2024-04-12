@@ -1,6 +1,6 @@
 # bestfit_all.py (PANDS project)
 #
-# A Python function to draw the pairwise scatter plots for the iris dataset variables colour-coded by
+# A Python function to draw the pairwise scatter plots for the Iris dataset variables colour-coded by
 # species. Best fit lines are then calculated using NumPy's ployfit method and superimposed on the 
 # scatter plots. The plots are drawn as a single figure, which is then saved to a file.
 # Seaborn is then used to create similar scatter plots with best fit lines by species for comparison.

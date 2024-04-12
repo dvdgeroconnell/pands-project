@@ -1,6 +1,6 @@
 # sepal.py (PANDS project)
 #
-# Python functions to create histograms of the the sepal length and sepal width by species. They are then
+# Python functions to create histograms of the sepal length and the sepal width by species. They are then
 # written to a file.
 #
 # Author: David O'Connell

@@ -1,6 +1,6 @@
 # write_correlation.py (PANDS project)
 #
-# A Python function to calculate the correlation coefficients and draw the heatmaps for the iris
+# A Python function to calculate the correlation coefficients and draw the heatmaps for the Iris
 # dataset, both overall and by species.
 #
 # Author: David O'Connell

@@ -1,6 +1,6 @@
 # petal.py (PANDS project)
 #
-# Python functions to create histograms of the the petal length and petal width by species. They are then
+# Python functions to create histograms of the petal length and the petal width by species. They are then
 # written to a file.
 #
 # Author: David O'Connell

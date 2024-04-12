@@ -1,6 +1,6 @@
 # scatter_all.py (PANDS project)
 #
-# A Python function to draw the pairwise scatter plots for the iris dataset variables colour-coded by
+# A Python function to draw the pairwise scatter plots for the Iris dataset variables colour-coded by
 # species. The scatter plots are drawn as a single figure, which is then saved to a file.
 # Scatter plots are drawn using both Matplotlib and Seaborn for comparison.
 #
