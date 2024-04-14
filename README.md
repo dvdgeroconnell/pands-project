@@ -10,6 +10,10 @@
 | **Student ID:**  | G00438912  |
 | **Student Email:**  | G00438912@atu.ie  |
 
+# Table of Contents
+[Purpose of this Repository](#Purpose-of-this-Repository)  
+[References](#References)
+
 ## Purpose of this Repository  
 This repository contains the files associated with the Programming and Scripting final project, the subject of which is an analysis of Fisher's iris data set.  
 Link to repository - [PANDS Project](https://github.com/dvdgeroconnell/pands-project.git).  
@@ -48,7 +52,11 @@ The data set contains 150 sets of measurements, consisting of a set of 50 measur
 Source [g4]
 
 The dataset is often called "Fisher's Iris data set" as it was presented as an example of linear discriminant analysis in a 1936 paper, *"The use of multiple measurements in taxonomic problems"* by the British statistician and biologist [Ronald A. Fisher](https://en.wikipedia.org/wiki/Ronald_Fisher). [Linear discriminant analysis](https://en.wikipedia.org/wiki/Linear_discriminant_analysis) is a method used in statistics, and other fields, to find a linear combination of features that characterizes or separates two or more classes of objects or events. Fisher used the Iris data set to demonstrate how his linear discriminant model could be used to distinguish the 3 species from each other based on the 4 known attributes [g1]. The paper is available [here](https://digital.library.adelaide.edu.au/dspace/handle/2440/15227).  
-This data set is widely used in field of statistical data analysis and pattern recognition / machine learning [g1], [g3]. One class is linearly separable from the other 2; the latter are not linearly separable from each other [g7].  
+
+This data set is widely used in field of statistical data analysis and pattern recognition / machine learning.  
+It is often used to understand classification and clustering algorithms.   
+
+This dataset is particularly popular due to its simplicity and the clear separation of the different species based on the measured attributes. Using the features of the iris flowers, researchers and data scientists can classify each sample into one of the three species. One class (setosa) is linearly separable from the other 2; the other 2 (versicolor and virginica) are not linearly separable from each other [g1], [g7].  
 
 # Using the Program
 ## Libraries and Packages Used
@@ -97,9 +105,38 @@ This file contains a Python function to calculate the correlation coefficients a
 ### bestfit_all.py  
 A Python function to draw the pairwise scatter plots for the Iris dataset variables colour-coded by species. Best fit lines are then calculated using NumPy's ployfit method and superimposed on the scatter plots. The plots are drawn as a single figure. Seaborn is then used to create similar scatter plots with best fit lines by species for comparison. Both versions are saved to files and the names are displayed to the user.
 
+## Running the Program
+
+Clone the GitHub repository using the link in the **Purpose of this Repository** section above [Purpose of this Repository](#Purpose-of-this-Repository)
+
+
 # Analysis
 
-## Menu Options
+## Correlation
+The Pandas *corr()* method [c4] is used to establish a pairwise correlation between columns. NaN, NULL values are excluded.  
+  
+The method of correlation may be one of Pearson, Kendall-Tau and Spearman. Pearson is the default, and was used in this analysis [c5].  
+The Pearson correlation coefficient is defined as "the ratio between the covariance of two variables and the product of their standard deviations" [g5], where covariance in probability theory and statistics is a measure of the joint variability of two random variables, X and Y, and is defined as "the expected value (or mean) of the product of the deviations of X and Y from their individual expected values"[g6].  
+
+Pearson's correlation coefficient is essentially a normalized measurement of the covariance, such that the result always has a value between −1 and 1" [g5]. Covariance is defined as a measure of the joint variability of two random variables [g6], or in other words, how closely change in one is related to change in another. If both increase together, the covariance will be positive. If one decreases as the other increases, the covariance will be negative, denoting an inverse relationship. This can be seen in Figure 3.  
+
+**Figure 3 - Scatter diagrams with various values of ρ, the correlation coefficient**  
+![Correlation Coefficient](images/correlation_coefficient.png)  
+Source [g5]  
+
+The lower the correlation value in absolute terms, the weaker the relationship between the x and y variables. For example, 0.8 or -0.8 implies a strong relationship between the x and y variable; whereas a correlation of 0.2 or -0.2 implies a weak relationship.
+Note that the Pearson correlation coefficient is symmetric: corr(X,Y) = corr(Y,X) [g5].  
+
+## Best Fit
+
+We will start with the most familiar linear regression, a straight-line fit to data. A straight-line fit is a model of the form y=ax+b where a is commonly known as the slope, and b is commonly known as the intercept.
+
+
+
+
+
+
+## Program Menu Options
 
 The user is presented with the following menu:
 
@@ -113,34 +150,62 @@ The user is presented with the following menu:
     0 to quit
     Enter choice:
 
-## Option 1 - Statistical Summary
+### Option 1 - Statistical Summary
 what does it tell us?  
 
-## Option 2 - Histograms
+### Option 2 - Histograms
 what does it tell us?
 
-## Correlation
-The Pandas *corr()* method [c4] is used to establish a pairwise correlation between columns.  
-NaN, NULL values are excluded.
-The method of correlation may be chosen from Pearson, Kendall-Tau and Spearman. Pearson is the default, and was used in this analysis [c5].  
+  ### Option 5 - Correlation & Heatmaps
 
-The Pearson correlation coefficient is defined as "the ratio between the covariance of two variables and the product of their standard deviations. It is essentially a normalized measurement of the covariance, such that the result always has a value between −1 and 1" [g5].Covariance is defined as a measure of the joint variability of two random variables [g6], or in other words, how closely change in one is related to change in another.
+Text file output - *iris_correlation.txt*   
+    
+    Correlation summary for all iris species
+                petal_length  petal_width  sepal_length  sepal_width
+    petal_length      1.000000     0.962865      0.871754    -0.428440
+    petal_width       0.962865     1.000000      0.817941    -0.366126
+    sepal_length      0.871754     0.817941      1.000000    -0.117570
+    sepal_width      -0.428440    -0.366126     -0.117570     1.000000
+      
+    Note: these correlations are not so meaningful as they are calculated across
+    3 different species. It is more meaningful to look at the separate correlations
+    for each species separately, and then compare the summaries.
 
-If both increase together, the covariance will be positive. If one decreases as the other increases, the covariance will be negative, denoting an inverse relationship. This can be seen in Figure 3.  
+    Correlation summary for the setosa species
+                petal_length  petal_width  sepal_length  sepal_width
+    petal_length      1.000000     0.331630      0.267176     0.177700
+    petal_width       0.331630     1.000000      0.278098     0.232752
+    sepal_length      0.267176     0.278098      1.000000     0.742547
+    sepal_width       0.177700     0.232752      0.742547     1.000000
 
-**Figure 3 - Scatter diagrams with various values of ρ, the correlation coefficient**  
-![Correlation Coefficient](images/correlation2.png)  
-Source [g5]
+    Correlation summary for the versicolor species
+                petal_length  petal_width  sepal_length  sepal_width
+    petal_length      1.000000     0.786668      0.754049     0.560522
+    petal_width       0.786668     1.000000      0.546461     0.663999
+    sepal_length      0.754049     0.546461      1.000000     0.525911
+    sepal_width       0.560522     0.663999      0.525911     1.000000
 
+    Correlation summary for the virginica species
+                petal_length  petal_width  sepal_length  sepal_width
+    petal_length      1.000000     0.322108      0.864225     0.401045
+    petal_width       0.322108     1.000000      0.281108     0.537728
+    sepal_length      0.864225     0.281108      1.000000     0.457228
+    sepal_width       0.401045     0.537728      0.457228     1.000000
 
+  Test here  
+    
+![Iris correlation](images/corr_iris.png)  
+  
+#### Observations
+Negative correlations for the iris overall are positive for each of the species. When the best fit lines for those pairs of variables aer viewed in graphical form, the reason can clearly clearly see clear to see.
 
-offers a choice of correlation
-Method of correlation:
+### Best Fit  
+text here  
+![Best Fit - NumPy, Pyplot](images/bestfit_plt_1.png)  
+  
 
-Compute pairwise correlation of columns, excluding NA/null values
-
-
-
+#### Observations
+1. The best fit line for all species has a positive slope in all cases, which implies that as one attribute increases, the other is also likely to increase.
 
 
 ## How to use this Repository
@@ -153,20 +218,27 @@ Note to self - review this - https://docs.github.com/en/repositories/managing-yo
 
 
 # References  
-## Methodology
+<a name="References"></a>  
+## Methodology  
 Since markdown doesn't support superscripts, the paragraph, quotation or figure are followed by the applicable reference or citation in square brackets. The references are listed below, and are prefixed with 'g' or 'c' depending on whether they're in the list of general or code references. So, for example, [g7] refers to item 7 in the General Reference list below.
 
-## General References (prefixed with g)  
+## General References    
+General references are prefixed with 'g'.  
 1. [iris dataset wikipedia page](https://en.wikipedia.org/wiki/Iris_flower_data_set)  
-2. [Project Description](PANDS_Project_2024.pdf)
+2. [Project Description](PANDS_Project_2024.pdf)  
 3. [About Fisher's Iris dataset](https://www.angela1c.com/projects/iris_project/the-iris-dataset/)  
 4. [Exploring the Iris flower dataset](https://eminebozkus.medium.com/exploring-the-iris-flower-dataset-4e000bcc266c)  
-5. [Pearson Correlation Coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
-6. [Covariance](https://en.wikipedia.org/wiki/Covariance)
-7. [UCI Irvine Machine Learning Repository](https://archive.ics.uci.edu/dataset/53/iris)
-8. [The Iris Dataset - A Little Bit of History and Biology](https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5)
+5. [Pearson Correlation Coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)  
+6. [Covariance](https://en.wikipedia.org/wiki/Covariance)  
+7. [UCI Irvine Machine Learning Repository](https://archive.ics.uci.edu/dataset/53/iris)  
+8. [The Iris Dataset - A Little Bit of History and Biology](https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5)  
+9. [Iris data set in Machine Learning](https://www.geeksforgeeks.org/iris-dataset/)   
+  
+10. [Iris data set Analysis in Kaggle](https://www.kaggle.com/search?q=iris+dataset+analysis)
 
-## Code References (prefixed with c)  
+
+## Code References  
+Code references are prefixed with 'c'.  
 1. [matplotlib subplots page](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subplots_demo.html)  
 2. [match/case statement syntax](https://www.datacamp.com/tutorial/python-switch-case)  
 3. [Pandas tutorials](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html)  
