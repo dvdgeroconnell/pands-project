@@ -109,7 +109,7 @@ A Python function to draw the pairwise scatter plots for the Iris dataset variab
 
 Clone the GitHub repository using the link in the **Purpose of this Repository** section above [Purpose of this Repository](#Purpose-of-this-Repository).
 Execute the program by typing *"python analysis.py"*. This results in the menu being presented.
-The menu options and their outputs are described in the [Program Menu Options](#Program-Menu-Options) section.
+The menu options and their outputs are described in the [Program Outputs](#Program-Outputs) section.
 
 # Analysis
 
@@ -123,44 +123,44 @@ Pearson's correlation coefficient is essentially a normalized measurement of the
 
 **Figure 3 - Scatter diagrams with various values of ρ, the correlation coefficient**  
 
-<img src="images/correlation_coefficient.png" width="438" height="240">  
-Source [g5]  
+<img src="images/correlation_coefficient.png" width="438" height="240">    
+Source [g5]
 
-The lower the correlation value in absolute terms, the weaker the relationship between the x and y variables. For example, 0.8 or -0.8 implies a strong relationship between the x and y variable; whereas a correlation of 0.2 or -0.2 implies a weak relationship.
+The lower the correlation value in absolute terms, the weaker the relationship between the x and y variables. For example, 0.8 or -0.8 implies a strong relationship between the x and y variable; whereas a correlation of 0.2 or -0.2 implies a weak relationship.  
 Note that the Pearson correlation coefficient is symmetric: corr(X,Y) = corr(Y,X) [g5].  
 
 ## Best Fit
 
+A best fit or regression line is intended to represent a set of points such that the sum of the squared distance from each point to the line is minimized. This is called the Ordinary Least Squares (OLS) method.  
+    
+The distance (usually the vertical distance) from each point to the line is called the residual, and it may be positive or negative depending on whether the point is above of below the line. The simplest case is linear regression, where the solution is a straight line or first order polynomial:  
+  
+$y = mx + c$;  
+  
+$m$ is the called the *slope* and $b$ is called the *intercept*.  
+  
+**Figure 4 - Linear Regression line with Residuals**  
+<img src="images/800px-Residuals_for_Linear_Regression_Fit.png" width="438" height="240">  
+Source [g10]
 
-<img src="images/800px-Residuals_for_Linear_Regression_Fit.png" width="438" height="240">
+The advantage of linear regression is that it establishes a trend and allows you to make educated guesses about further values. It also allows you to identify outliers - for example, if a data point is way off the best fit line, it may merit further inspection.  
+  
+A disadvantage of linear regression model is that it is very unlikely to be a perfect fit to real world data, and you lose visibility to variances within the dataset - this is where the correlation coefficient is useful, as it indicates how well your the is likely to be modelled by a straight line. A higher order polynomial regression model may be a better fit, however it involves increased complexity and is less intuitive [g11].  
+  
+**Figure 5 - Best Fit / Line**  
+![linear regression](images/438px-linear_regression.png)  
+Source [g10]  
 
-The least squares method fitting a line so that the sum of the squared distance from each point to the regression line (residual) is minimized. Let’s visualize this in the diagram below where the red line is the regression line and the blue lines are the residuals.
+In this program, the NumPy ployfit method is used. This method supports both linear and polynomial regression:  
 
-![linear rgression](images/438px-linear_regression.png)
+*best_fit = numpy.polyfit(x, y, order)*
 
-https://www.mathworks.com/help/dsp/ref/leastsquarespolynomialfit.html
-The Least Squares Polynomial Fit block computes the coefficients of the nth order polynomial that best fits the input data in the least-squares sense, where n is the value you specify in the Polynomial order parameter. The block computes a distinct set of n+1 coefficients for each column of the M-by-N input u.
+where order = 1 for linear regression. The Ordinary Least Squares method is used to calculate the best fit [c7]. [g11].
 
-https://www.vedantu.com/maths/least-square-method
-The Least Square Method says that the curve that fits a set of data points is the curve that has a minimum sum of squared residuals of the data points.
+## Program Outputs
 
-LOCKED...
-https://study.com/academy/lesson/least-squares-regression-definition-equations-examples.html#:~:text=y%20%3D%20a%20%2B%20bx%20%2B%20cx2.&text=These%20three%20equations%20and%20three,1%2F2)x2.&text=In%20this%20case%2C%20the%20curve,and%20the%20error%20E%20%3D%200.
-What is the least-squares regression line equation?
-The least-squares regression line equation is y = mx + b, where m is the slope, which is equal to (Nsum(xy) - sum(x)sum(y))/(Nsum(x^2) - (sum x)^2), and b is the y-intercept, which is equals to (sum(y) - msum(x))/N. N is the number of data points, and x and y are the coordinates of the data points.
-
-We will start with the most familiar linear regression, a straight-line fit to data. A straight-line fit is a model of the form y=ax+b where a is commonly known as the slope, and b is commonly known as the intercept.
-
-
-
-
-
-
-
-
-
-## Program Menu Options
-<a name="Program-Menu-Options"></a> 
+## Program Outputs
+<a name="Program-Outputs"></a> 
 The user is presented with the following menu:
 
     Enter one of the following:
@@ -174,6 +174,47 @@ The user is presented with the following menu:
     Enter choice:
 
 ### Option 1 - Statistical Summary
+When this option is chosen, the following summary data is written to *iris_summary.txt*.
+
+    Overall summary for the iris dataset
+            petal_length  petal_width  sepal_length  sepal_width
+    min         1.000000     0.100000      4.300000     2.000000
+    max         6.900000     2.500000      7.900000     4.400000
+    median      4.350000     1.300000      5.800000     3.000000
+    mean        3.758000     1.199333      5.843333     3.057333
+    std         1.765298     0.762238      0.828066     0.435866
+    
+    Note: these statistics are not so meaningful as they are calculated across 3
+    different species. It is more meaningful to look at the separate summaries for
+    each species separately, and then compare the summaries.
+
+    Statistical summary for the setosa species
+            petal_length  petal_width  sepal_length  sepal_width
+    min         1.000000     0.100000       4.30000     2.300000
+    max         1.900000     0.600000       5.80000     4.400000
+    median      1.500000     0.200000       5.00000     3.400000
+    mean        1.462000     0.246000       5.00600     3.428000
+    std         0.173664     0.105386       0.35249     0.379064
+
+    Statistical summary for the versicolor species
+            petal_length  petal_width  sepal_length  sepal_width
+    min         3.000000     1.000000      4.900000     2.000000
+    max         5.100000     1.800000      7.000000     3.400000
+    median      4.350000     1.300000      5.900000     2.800000
+    mean        4.260000     1.326000      5.936000     2.770000
+    std         0.469911     0.197753      0.516171     0.313798
+
+    Statistical summary for the virginica species
+            petal_length  petal_width  sepal_length  sepal_width
+    min         4.500000      1.40000       4.90000     2.200000
+    max         6.900000      2.50000       7.90000     3.800000
+    median      5.550000      2.00000       6.50000     3.000000
+    mean        5.552000      2.02600       6.58800     2.974000
+    std         0.551895      0.27465       0.63588     0.322497
+
+What does the data tell us?  
+
+
 what does it tell us?  
 
 ### Option 2 - Histograms
@@ -181,7 +222,7 @@ what does it tell us?
 
   ### Option 5 - Correlation & Heatmaps
 
-Text file output - *iris_correlation.txt*   
+Text file output - *iris_correlation.txt*.   
     
     Correlation summary for all iris species
                 petal_length  petal_width  sepal_length  sepal_width
@@ -256,6 +297,8 @@ General references are prefixed with 'g'.
 7. [UCI Irvine Machine Learning Repository](https://archive.ics.uci.edu/dataset/53/iris)  
 8. [The Iris Dataset - A Little Bit of History and Biology](https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5)  
 9. [Iris data set in Machine Learning](https://www.geeksforgeeks.org/iris-dataset/)   
+10. [Least Squares method](https://www.ehdp.com/methods/least-squares-method-1.htm)
+11. [Linear Regression in Python](https://data36.com/linear-regression-in-python-numpy-polyfit/)
   
 ## Code References  
 Code references are prefixed with 'c'.  
@@ -270,7 +313,8 @@ Code references are prefixed with 'c'.
 ## Other References
 References that are not explicitly linked to a specific part of the document but of general use.  
 1. [Linking within a Markdown document](https://stackoverflow.com/questions/2822089/how-to-link-to-part-of-the-same-document-in-markdown)  
-2. [Iris data set Analysis in Kaggle](https://www.kaggle.com/search?q=iris+dataset+analysis)  
+2. [Displaying and resizing images in Markdown](https://www.markdownguide.org/hacks/#:~:text=If%20you%20need%20to%20resize,of%20an%20image%20in%20pixels.&text=The%20rendered%20output%20will%20contain,to%20the%20dimensions%20you%20specified.)
+2. [Iris data set analysis in Kaggle](https://www.kaggle.com/search?q=iris+dataset+analysis)  
 
 
 ****
