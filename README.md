@@ -16,7 +16,6 @@
 
 ## Purpose of this Repository  
 <a name="Purpose-of-this-Repository"></a>  
-
 This repository contains the files associated with the Programming and Scripting final project, the subject of which is an analysis of Fisher's iris data set.  
 Link to repository - [PANDS Project](https://github.com/dvdgeroconnell/pands-project.git).  
 
@@ -76,7 +75,6 @@ This dataset is particularly popular due to its simplicity and the clear separat
 The raw dataset in useable csv format was downloaded from [here](https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv). This csv file has already undergone some cleanup, including the addition of a heaading row and presentation of the different species as simply *setosa*, *versicolor* and *virginica*.  
 ### analysis.py  
 This file contains the main Python program to offer the menu options and run the relevant functions based on the menu option chosen.   
-Execute the program by typing *"python analysis.py"*. This results in the menu being presented. 
 ### menu.py  
 This file contains a Python function to draw the menu of options, check the entered choice is a valid integer and return the value to the calling program, where the range checking is done.     
 ### write_summary.py  
@@ -110,7 +108,8 @@ A Python function to draw the pairwise scatter plots for the Iris dataset variab
 ## Running the Program
 
 Clone the GitHub repository using the link in the **Purpose of this Repository** section above [Purpose of this Repository](#Purpose-of-this-Repository).
-
+Execute the program by typing *"python analysis.py"*. This results in the menu being presented.
+The menu options and their outputs are described in the [Menu Options](#Program-Menu-Options) section.
 
 # Analysis
 
@@ -139,7 +138,7 @@ We will start with the most familiar linear regression, a straight-line fit to d
 
 
 ## Program Menu Options
-
+<a name="Program-Menu-Options"></a> 
 The user is presented with the following menu:
 
     Enter one of the following:
