@@ -15,6 +15,8 @@
 [References](#References)
 
 ## Purpose of this Repository  
+<a name="Purpose-of-this-Repository"></a>  
+
 This repository contains the files associated with the Programming and Scripting final project, the subject of which is an analysis of Fisher's iris data set.  
 Link to repository - [PANDS Project](https://github.com/dvdgeroconnell/pands-project.git).  
 
@@ -23,15 +25,15 @@ Link to repository - [PANDS Project](https://github.com/dvdgeroconnell/pands-pro
 This is summarized from the detailed Project Description in [g2].
 The project is about researching and analyzing the well-known Fisher’s Iris data set [g1]. The investigation requires documentation and code (in Python [c6]) to be written. The project will need to be broken into several smaller tasks that are easier to solve, and these will need to be plugged together once they have been completed. Steps to follow:
 
-1. Research the data set online and write a summary about it in your README.
-2. Download the data set and add it to your repository.
+1. Research the data set online and write a summary about it in the README.
+2. Download the data set and add it to the repository.
 3. Write a program called analysis.py that:
-    1 .Outputs a summary of each variable to a single text file,
+    1. Outputs a summary of each variable to a single text file
     2. Saves a histogram of each variable to png files, and
-    3. Outputs a scatter plot of each pair of variables.
-    4. Performs any other analysis you think is appropriate.
+    3. Outputs a scatter plot of each pair of variables
+    4. Performs any other analysis you think is appropriate
 
-The requiremnent for original text and analysis was emphasized in the Project Description.
+The requiremnent for original text and analysis is emphasized in the Project Description.
 
 ### Approach
 While it was left open as to whether to create a Jupyter notebook as well as the README, it was decided to capture the reasearch and analysis in the README to avoid repetition and / or referencing over and back between documents.
@@ -107,7 +109,7 @@ A Python function to draw the pairwise scatter plots for the Iris dataset variab
 
 ## Running the Program
 
-Clone the GitHub repository using the link in the **Purpose of this Repository** section above [Purpose of this Repository](#Purpose-of-this-Repository)
+Clone the GitHub repository using the link in the **Purpose of this Repository** section above [Purpose of this Repository](#Purpose-of-this-Repository).
 
 
 # Analysis
@@ -234,9 +236,6 @@ General references are prefixed with 'g'.
 8. [The Iris Dataset - A Little Bit of History and Biology](https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5)  
 9. [Iris data set in Machine Learning](https://www.geeksforgeeks.org/iris-dataset/)   
   
-10. [Iris data set Analysis in Kaggle](https://www.kaggle.com/search?q=iris+dataset+analysis)
-
-
 ## Code References  
 Code references are prefixed with 'c'.  
 1. [matplotlib subplots page](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subplots_demo.html)  
@@ -245,6 +244,11 @@ Code references are prefixed with 'c'.
 4. [Pandas correlation method](https://www.geeksforgeeks.org/python-pandas-dataframe-corr/)  
 5. [Pandas documentation on corr()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html)  
 6. [Python Software Foundation](https://www.python.org/)
+
+## Other References
+References that are not explicitly linked to a specific part of the document but of general use.  
+1. [Linking within a Markdown document](https://stackoverflow.com/questions/2822089/how-to-link-to-part-of-the-same-document-in-markdown)  
+2. [Iris data set Analysis in Kaggle](https://www.kaggle.com/search?q=iris+dataset+analysis)  
 
 
 ****
