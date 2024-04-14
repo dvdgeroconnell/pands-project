@@ -103,13 +103,13 @@ This file contains a Python function to draw the pairwise scatter plots for the 
 ### write_correlation.py  
 This file contains a Python function to calculate the correlation coefficients and draw the heatmaps for the Iris dataset, both overall and by species. The heatmaps are drawn as a single figure and saved to a file. The name is displayed to the user. 
 ### bestfit_all.py  
-A Python function to draw the pairwise scatter plots for the Iris dataset variables colour-coded by species. Best fit lines are then calculated using NumPy's ployfit method and superimposed on the scatter plots. The plots are drawn as a single figure. Seaborn is then used to create similar scatter plots with best fit lines by species for comparison. Both versions are saved to files and the names are displayed to the user.
+A Python function to draw the pairwise scatter plots for the Iris dataset variables colour-coded by species. Best fit lines are then calculated using NumPy's ployfit method [c7] and superimposed on the scatter plots. The plots are drawn as a single figure. Seaborn is then used to create similar scatter plots with best fit lines by species for comparison. Both versions are saved to files and the names are displayed to the user.
 
 ## Running the Program
 
 Clone the GitHub repository using the link in the **Purpose of this Repository** section above [Purpose of this Repository](#Purpose-of-this-Repository).
 Execute the program by typing *"python analysis.py"*. This results in the menu being presented.
-The menu options and their outputs are described in the [Menu Options](#Program-Menu-Options) section.
+The menu options and their outputs are described in the [Program Menu Options](#Program-Menu-Options) section.
 
 # Analysis
 
@@ -122,7 +122,8 @@ The Pearson correlation coefficient is defined as "the ratio between the covaria
 Pearson's correlation coefficient is essentially a normalized measurement of the covariance, such that the result always has a value between −1 and 1" [g5]. Covariance is defined as a measure of the joint variability of two random variables [g6], or in other words, how closely change in one is related to change in another. If both increase together, the covariance will be positive. If one decreases as the other increases, the covariance will be negative, denoting an inverse relationship. This can be seen in Figure 3.  
 
 **Figure 3 - Scatter diagrams with various values of ρ, the correlation coefficient**  
-![Correlation Coefficient](images/correlation_coefficient.png)  
+
+<img src="images/correlation_coefficient.png" width="438" height="240">  
 Source [g5]  
 
 The lower the correlation value in absolute terms, the weaker the relationship between the x and y variables. For example, 0.8 or -0.8 implies a strong relationship between the x and y variable; whereas a correlation of 0.2 or -0.2 implies a weak relationship.
@@ -130,7 +131,28 @@ Note that the Pearson correlation coefficient is symmetric: corr(X,Y) = corr(Y,X
 
 ## Best Fit
 
+
+<img src="images/800px-Residuals_for_Linear_Regression_Fit.png" width="438" height="240">
+
+The least squares method fitting a line so that the sum of the squared distance from each point to the regression line (residual) is minimized. Let’s visualize this in the diagram below where the red line is the regression line and the blue lines are the residuals.
+
+![linear rgression](images/438px-linear_regression.png)
+
+https://www.mathworks.com/help/dsp/ref/leastsquarespolynomialfit.html
+The Least Squares Polynomial Fit block computes the coefficients of the nth order polynomial that best fits the input data in the least-squares sense, where n is the value you specify in the Polynomial order parameter. The block computes a distinct set of n+1 coefficients for each column of the M-by-N input u.
+
+https://www.vedantu.com/maths/least-square-method
+The Least Square Method says that the curve that fits a set of data points is the curve that has a minimum sum of squared residuals of the data points.
+
+LOCKED...
+https://study.com/academy/lesson/least-squares-regression-definition-equations-examples.html#:~:text=y%20%3D%20a%20%2B%20bx%20%2B%20cx2.&text=These%20three%20equations%20and%20three,1%2F2)x2.&text=In%20this%20case%2C%20the%20curve,and%20the%20error%20E%20%3D%200.
+What is the least-squares regression line equation?
+The least-squares regression line equation is y = mx + b, where m is the slope, which is equal to (Nsum(xy) - sum(x)sum(y))/(Nsum(x^2) - (sum x)^2), and b is the y-intercept, which is equals to (sum(y) - msum(x))/N. N is the number of data points, and x and y are the coordinates of the data points.
+
 We will start with the most familiar linear regression, a straight-line fit to data. A straight-line fit is a model of the form y=ax+b where a is commonly known as the slope, and b is commonly known as the intercept.
+
+
+
 
 
 
@@ -242,7 +264,8 @@ Code references are prefixed with 'c'.
 3. [Pandas tutorials](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html)  
 4. [Pandas correlation method](https://www.geeksforgeeks.org/python-pandas-dataframe-corr/)  
 5. [Pandas documentation on corr()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html)  
-6. [Python Software Foundation](https://www.python.org/)
+6. [Python Software Foundation](https://www.python.org/)  
+7. [NumPy polyfit()](https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html#numpy.polyfit)
 
 ## Other References
 References that are not explicitly linked to a specific part of the document but of general use.  
