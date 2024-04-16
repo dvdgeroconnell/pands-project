@@ -230,19 +230,19 @@ Looking at the petal length and petal width columns, the separation of the *seto
 Also as previously observed, the sepal length and sepal width attributes clearly overlap for all 3 species. Those attributes cannot be used to distinguish between species.  
   
  ### Option 3 - Individual Histograms  
-The following histograms 
+The following histograms  
 **Figure 7 - *Iris* petal length histograms by species**  
 <img src="hist_petal_length.png" width="750" height="250">  
-  
+   
 **Figure 8 - *Iris* petal width histograms by species**  
 <img src="hist_petal_width.png" width="750" height="250">  
-  
+   
 **Figure 9 - *Iris* sepal length histograms by species**  
 <img src="hist_sepal_length.png" width="750" height="250">  
-  
+   
 **Figure 10 - *Iris* petal width histograms by species**  
 <img src="hist_sepal_width.png" width="750" height="250">  
-
+  
 #### Observations  
 Each
 
