@@ -12,7 +12,8 @@
 
 # Table of Contents
 [Purpose of this Repository](#Purpose-of-this-Repository)  
-[References](#References)
+[References](#References)  
+[Option 2](#Option-2:-Histograms)  
 
 ## Purpose of this Repository  
 <a name="Purpose-of-this-Repository"></a>  
