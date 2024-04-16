@@ -170,7 +170,7 @@ The user is presented with the following menu:
     0 to quit
     Enter choice:
 
-### Option 1 - Statistical Summary  
+### Option 1: Statistical Summary  
 When this option is chosen, the following summary data is written to *iris_summary.txt*.  
   
     Overall summary for the iris dataset
@@ -216,7 +216,8 @@ The sepal lengths and sepal widths paint a much less clear picture, as all 3 of 
   
 In summary the statistics indicate that we should consider the data for each species individually, as too much detail is lost by averaging across the iris data set as a whole.
 
-### Option 2 - Histograms  
+<a name="Option-2:-Histograms"></a>  
+### Option 2: Histograms  
 
 Choosing this option causes a set of 12 histograms to be drawn, representing the 4 attributes (petal length, petal width, sepal length, sepal width) for each of the 3 species. The plots are drawn as a set of axes in a single figure, using the *subplots()* method in Matplotlib.  
   
@@ -230,7 +231,9 @@ Looking at the petal length and petal width columns, the separation of the *seto
 Also as previously observed, the sepal length and sepal width attributes clearly overlap for all 3 species. Those attributes cannot be used to distinguish between species.  
   
  ### Option 3 - Individual Histograms  
-The following histograms  
+The following histograms each represent a single attribute as a row, with a plot per species.  
+Density plots are included and show the spread for each atribute.  
+  
 **Figure 7 - *Iris* petal length histograms by species**  
 <img src="hist_petal_length.png" width="750" height="250">  
    
@@ -244,7 +247,8 @@ The following histograms
 <img src="hist_sepal_width.png" width="750" height="250">  
   
 #### Observations  
-Each
+This is just a slightly different way of presenting the histograms already reviewed in [Option 2](#Option-2:-Histograms) above.  
+
 
 ### Option 4 - Scatter Plots
 
