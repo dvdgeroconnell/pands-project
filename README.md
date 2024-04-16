@@ -171,7 +171,7 @@ The user is presented with the following menu:
     0 to quit
     Enter choice:
 
-### Option 1: Statistical Summary  
+### Option 1 - Statistical Summary  
 When this option is chosen, the following summary data is written to *iris_summary.txt*.  
   
     Overall summary for the iris dataset
@@ -217,9 +217,8 @@ The sepal lengths and sepal widths paint a much less clear picture, as all 3 of 
   
 In summary the statistics indicate that we should consider the data for each species individually, as too much detail is lost by averaging across the iris data set as a whole.
 
-<a name="Option-2---Histograms"></a>  
 ### Option 2 - Histograms  
-
+<a name="Option-2---Histograms"></a>  
 Choosing this option causes a set of 12 histograms to be drawn, representing the 4 attributes (petal length, petal width, sepal length, sepal width) for each of the 3 species. The plots are drawn as a set of axes in a single figure, using the *subplots()* method in Matplotlib.  
   
 **Figure 6 - *Iris* attribute histograms by species**  
