@@ -36,6 +36,7 @@ The requiremnent for original text and analysis is emphasized in the Project Des
 
 ### Approach
 While it was left open as to whether to create a Jupyter notebook as well as the README, it was decided to capture the reasearch and analysis in the README to avoid repetition and / or referencing over and back between documents.
+The primary Python packages used were the NumPy, Matplotlib Pandas and Seaborn packages. For the scatter plots and best fit lines, I used both Numpy / Matplotlib and Seaborn as a comparison. 
 
 # Background Research  
 
@@ -106,7 +107,6 @@ This file contains a Python function to calculate the correlation coefficients a
 A Python function to draw the pairwise scatter plots for the Iris dataset variables colour-coded by species. Best fit lines are then calculated using NumPy's ployfit method [c7] and superimposed on the scatter plots. The plots are drawn as a single figure. Seaborn is then used to create similar scatter plots with best fit lines by species for comparison. Both versions are saved to files and the names are displayed to the user.
 
 ## Running the Program
-
 Clone the GitHub repository using the link in the **Purpose of this Repository** section above [Purpose of this Repository](#Purpose-of-this-Repository).
 Execute the program by typing *"python analysis.py"*. This results in the menu being presented.
 The menu options and their outputs are described in the [Program Outputs](#Program-Outputs) section.
@@ -130,7 +130,6 @@ The lower the correlation value in absolute terms, the weaker the relationship b
 Note that the Pearson correlation coefficient is symmetric: corr(X,Y) = corr(Y,X) [g5].  
 
 ## Best Fit
-
 A best fit or regression line is intended to represent a set of points such that the sum of the squared distance from each point to the line is minimized. This is called the Ordinary Least Squares (OLS) method.  
     
 The distance (usually the vertical distance) from each point to the line is called the residual, and it may be positive or negative depending on whether the point is above of below the line. The simplest case is linear regression, where the solution is a straight line or first order polynomial:  
@@ -155,9 +154,7 @@ In this program, the NumPy ployfit method is used. This method supports both lin
 
 *best_fit = numpy.polyfit(x, y, order)*
 
-where order = 1 for linear regression. The Ordinary Least Squares method is used to calculate the best fit [c7]. [g11].
-
-## Program Outputs
+where order = 1 for linear regression. The Ordinary Least Squares method is used to calculate the best fit [c7], [g11].
 
 ## Program Outputs
 <a name="Program-Outputs"></a> 
@@ -173,9 +170,9 @@ The user is presented with the following menu:
     0 to quit
     Enter choice:
 
-### Option 1 - Statistical Summary
-When this option is chosen, the following summary data is written to *iris_summary.txt*.
-
+### Option 1 - Statistical Summary  
+When this option is chosen, the following summary data is written to *iris_summary.txt*.  
+  
     Overall summary for the iris dataset
             petal_length  petal_width  sepal_length  sepal_width
     min         1.000000     0.100000      4.300000     2.000000
@@ -183,10 +180,6 @@ When this option is chosen, the following summary data is written to *iris_summa
     median      4.350000     1.300000      5.800000     3.000000
     mean        3.758000     1.199333      5.843333     3.057333
     std         1.765298     0.762238      0.828066     0.435866
-    
-    Note: these statistics are not so meaningful as they are calculated across 3
-    different species. It is more meaningful to look at the separate summaries for
-    each species separately, and then compare the summaries.
 
     Statistical summary for the setosa species
             petal_length  petal_width  sepal_length  sepal_width
@@ -212,17 +205,57 @@ When this option is chosen, the following summary data is written to *iris_summa
     mean        5.552000      2.02600       6.58800     2.974000
     std         0.551895      0.27465       0.63588     0.322497
 
-What does the data tell us?  
+#### Observations  
+The mean values for *Iris setosa* petal length and petal width, at 1.462cm and 0.246cm, are much smaller than for *Iris versicolor*, at 4.26cm and 1.326cm, compared to *Iris virginica* at 5.552cm and *Iris versicolor*, at 4.26cm and 1.326cm, and *Iris virginica* at 5.552cm and 2.026cm.  This detail is lost by taking the mean values across the full *Iris* data set, so we should look at the data for the individual species for the rest of this exercise.   
+  
+In fact, there is clear separation between *setosa* and the other 2 species as the maximum petal length for *setosa* is 1.9cm, which is below the minimum petal length of 3.0cm for *versicolor* and 4.5cm for *virginica*. Similarly for petal width, the maximum for *setosa* is 0.6cm, which is below the minimum of 1.0cm for *versicolor* and of 1.4cm for *virginica*.  The relatively small standard deviations for *setosa* petal length and petal width would also indicate a smaller spread.  
+    
+ There is no such clear separation between *Iris versicolor* and *Iris virginica* petal lengths and petal widths. While the means are different, at 4.26cm and 5.552cm respectively, the maximum petal length for *versicolor*, the smaller of the two, overlaps the minimum petal length for *viginica*. Similarly for petal width, the maximum for *versicolor*, the smaller of the two, overlaps the minimum for *virginica*.  
+  
+The sepal lengths and sepal widths paint a much less clear picture, as all 3 of the species overlap. Therefore, these attributes could not be used to tell the species apart. This will become clearer when we look at the histograms and scatter plots.  
+  
+In summary the statistics indicate that we should consider the data for each species individually, as too much detail is lost by averaging across the iris data set as a whole.
 
+### Option 2 - Histograms  
 
-what does it tell us?  
+Choosing this option causes a set of 12 histograms to be drawn, representing the 4 attributes (petal length, petal width, sepal length, sepal width) for each of the 3 species. The plots are drawn as a set of axes in a single figure, using the *subplots()* method in Matplotlib.  
+  
+**Figure 6 - *Iris* attribute histograms by species**  
+<img src="hist_all.png" width="900" height="600">  
 
-### Option 2 - Histograms
-what does it tell us?
+#### Observations  
+Each column represents an attribute, with the name for that attribute at the top of the column.    
+Each row represents a species, which are also colour coded and labelled.  
+Looking at the petal length and petal width columns, the separation of the *setosa* from the other 2 species can be clearly seen, as previously pointed out. The overlaps between *versicolor* and *virginica* can also be seen, making it more difficult to discriminate between these species on the basis of those attributes.  
+Also as previously observed, the sepal length and sepal width attributes clearly overlap for all 3 species. Those attributes cannot be used to distinguish between species.  
+  
+ ### Option 3 - Individual Histograms  
+The following histograms 
+**Figure 7 - *Iris* petal length histograms by species**  
+<img src="hist_petal_length.png" width="750" height="250">  
+  
+**Figure 8 - *Iris* petal width histograms by species**  
+<img src="hist_petal_width.png" width="750" height="250">  
+  
+**Figure 9 - *Iris* sepal length histograms by species**  
+<img src="hist_sepal_length.png" width="750" height="250">  
+  
+**Figure 10 - *Iris* petal width histograms by species**  
+<img src="hist_sepal_width.png" width="750" height="250">  
 
-  ### Option 5 - Correlation & Heatmaps
+#### Observations  
+Each
 
-Text file output - *iris_correlation.txt*.   
+### Option 4 - Scatter Plots
+
+    3 for histograms and density plots representing the individual iris variables written to 4 files
+    4 for a set of scatter plots representing the iris dataset variables
+
+#### Observations  
+Each
+
+### Option 5 - Correlation & Heatmaps  
+When this option is chosen, the correlation summary data is written to - *iris_correlation.txt*.   
     
     Correlation summary for all iris species
                 petal_length  petal_width  sepal_length  sepal_width
@@ -230,11 +263,7 @@ Text file output - *iris_correlation.txt*.
     petal_width       0.962865     1.000000      0.817941    -0.366126
     sepal_length      0.871754     0.817941      1.000000    -0.117570
     sepal_width      -0.428440    -0.366126     -0.117570     1.000000
-      
-    Note: these correlations are not so meaningful as they are calculated across
-    3 different species. It is more meaningful to look at the separate correlations
-    for each species separately, and then compare the summaries.
-
+   
     Correlation summary for the setosa species
                 petal_length  petal_width  sepal_length  sepal_width
     petal_length      1.000000     0.331630      0.267176     0.177700
@@ -263,7 +292,7 @@ Text file output - *iris_correlation.txt*.
 #### Observations
 Negative correlations for the iris overall are positive for each of the species. When the best fit lines for those pairs of variables aer viewed in graphical form, the reason can clearly clearly see clear to see.
 
-### Best Fit  
+### Option 6 - Best Fit  
 text here  
 ![Best Fit - NumPy, Pyplot](images/bestfit_plt_1.png)  
   

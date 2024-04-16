@@ -115,8 +115,8 @@ def scatter_all(iris):
 
     # Now using Seaborn - one line versus the code above
     # Density plots on the diagonal show the spread of values
-    # Just draw the 6 individual plots (corner=True), do not repeat them above the diagonal
-    sns.pairplot(iris,hue="species", corner=True)
+    # corner=True draws the 6 individual plots below the diagonal, however they are less clear
+    sns.pairplot(iris,hue="species", corner=False)
     plt.savefig(SCATTER_SNS)
 
     print("Scatter plots written to", SCATTER_PLT, "(Pyplot) and", SCATTER_SNS, "(Seaborn)")

@@ -159,7 +159,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# ignore plot files for now , so as not to fill the repo with temporary plot files
-*.png
-# image files in the images directory are required for the README so negate the rule for them
+# iplot files are required for the README so negate the ignore rule
+!*.png
+# image files in the images directory are required for the README so negate the ignore rule
 !images/*.png
