@@ -113,6 +113,26 @@ def scatter_all(iris):
     # Updated to save to file
     plt.savefig(SCATTER_PLT)
 
+    # Draw a separate scatter plot for iris petal length vs petal width - required for the README
+    fig2, axes2 = plt.subplots(nrows=1, ncols=1, figsize=(4.5,4))
+    axes2.scatter(setosa_plen, setosa_pwth, label="setosa", color='red', edgecolor='black')
+    axes2.scatter(versicolor_plen, versicolor_pwth, label="versicolor", color='blue', edgecolor='black')
+    axes2.scatter(virginica_plen, virginica_pwth, label="virginica", color='green', edgecolor='black')
+    axes2.set_title('Petal Length vs Petal Width', fontsize=9)
+    axes2.set_xlabel('Petal Length (cm)', fontsize=9)
+    axes2.set_ylabel('Petal Width (cm)', fontsize=9)
+    plt.savefig('scatter_petal.png')
+
+    # Draw a separate scatter plot for iris petal width vs sepal width - required for the README
+    fig3, axes3 = plt.subplots(nrows=1, ncols=1, figsize=(4.5,4))
+    axes3.scatter(setosa_pwth, setosa_swth, label="setosa", color='red', edgecolor='black')
+    axes3.scatter(versicolor_pwth, versicolor_swth, label="versicolor", color='blue', edgecolor='black')
+    axes3.scatter(virginica_pwth, virginica_swth, label="virginica", color='green', edgecolor='black')
+    axes3.set_title('Petal Width vs Sepal Width', fontsize=9)
+    axes3.set_xlabel('Petal Width (cm)', fontsize=9)
+    axes3.set_ylabel('Sepal Width (cm)', fontsize=9)
+    plt.savefig('scatter_sepal.png')
+
     # Now using Seaborn - one line versus the code above
     # Density plots on the diagonal show the spread of values
     # corner=True draws the 6 individual plots below the diagonal, however they are less clear

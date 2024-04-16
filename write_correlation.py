@@ -29,6 +29,7 @@ def iris_corr(iris):
     virginica = iris.loc[iris['species']=="virginica", "sepal_length":"petal_width"]
 
     # Create the figure and axes for the heatmap
+    # It consists of 4 individual heatmaps - one for each species, one for iris overall, and one colour bar
     fig, axes = plt.subplots(nrows=1, ncols=4, figsize=(12,6), sharey='row')
 
     try:

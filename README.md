@@ -12,16 +12,21 @@
 
 # Table of Contents
 [Purpose of this Repository](#Purpose-of-this-Repository)  
+[Project Summary](#Project-Summary)  
+[Background - Fisher's Iris Data Set](#Background---Fisher's-Iris-Data-Set)  
+[Using the Program](#Using-the-Program)  
+[Analysis](#Analysis)  
+ 
 [References](#References)  
-[Option 2](#Option-2---Histograms)  
 
-## Purpose of this Repository  
+# Purpose of this Repository  
 <a name="Purpose-of-this-Repository"></a>  
 This repository contains the files associated with the Programming and Scripting final project, the subject of which is an analysis of Fisher's iris data set.  
 Link to repository - [PANDS Project](https://github.com/dvdgeroconnell/pands-project.git).  
 
-## Project Summary
-### Problem Statement
+# Project Summary
+<a name="Project-Summary"></a>  
+## Problem Statement
 This is summarized from the detailed Project Description in [g2].
 The project is about researching and analyzing the well-known Fisher’s Iris data set [g1]. The investigation requires documentation and code (in Python [c6]) to be written. The project will need to be broken into several smaller tasks that are easier to solve, and these will need to be plugged together once they have been completed. Steps to follow:
 
@@ -35,13 +40,13 @@ The project is about researching and analyzing the well-known Fisher’s Iris da
 
 The requiremnent for original text and analysis is emphasized in the Project Description.
 
-### Approach
+## Approach
 While it was left open as to whether to create a Jupyter notebook as well as the README, it was decided to capture the reasearch and analysis in the README to avoid repetition and / or referencing over and back between documents.
 The primary Python packages used were the NumPy, Matplotlib Pandas and Seaborn packages. For the scatter plots and best fit lines, I used both Numpy / Matplotlib and Seaborn as a comparison. 
 
-# Background Research  
+# Background - Fisher's Iris Data Set  
+<a name="Background---Fisher's-Iris-Data-Set"></a>  
 
-## Fisher's Iris data set
 The Iris flower data set was originally gathered by botanist [Edgar Anderson](https://en.wikipedia.org/wiki/Edgar_Anderson) as part of his work to develop techniques to quantify geographic variation the morphological differences and geographical variations between different species of Iris - Iris setosa, Iris versicolor and Iris virginica.  
 
 **Figure 1 - Iris Species**  
@@ -61,7 +66,9 @@ It is often used to understand classification and clustering algorithms.
 
 This dataset is particularly popular due to its simplicity and the clear separation of the different species based on the measured attributes. Using the features of the iris flowers, researchers and data scientists can classify each sample into one of the three species. One class (setosa) is linearly separable from the other 2; the other 2 (versicolor and virginica) are not linearly separable from each other [g1], [g7].  
 
-# Using the Program
+# Using the Program  
+<a name="Using-the-Program"></a>  
+
 ## Libraries and Packages Used
 | Software | Version | Summary|
 |---------|-------------|---------|
@@ -113,19 +120,22 @@ Execute the program by typing *"python analysis.py"*. This results in the menu b
 The menu options and their outputs are described in the [Program Outputs](#Program-Outputs) section.
 
 # Analysis
+<a name="Analysis"></a>  
 
 ## Correlation
+<a name="Correlation"></a>
+
 The Pandas *corr()* method [c4] is used to establish a pairwise correlation between columns. NaN, NULL values are excluded.  
   
-The method of correlation may be one of Pearson, Kendall-Tau and Spearman. Pearson is the default, and was used in this analysis [c5].  
-The Pearson correlation coefficient is defined as "the ratio between the covariance of two variables and the product of their standard deviations" [g5], where covariance in probability theory and statistics is a measure of the joint variability of two random variables, X and Y, and is defined as "the expected value (or mean) of the product of the deviations of X and Y from their individual expected values"[g6].  
+The method of correlation may be one of Pearson, Kendall-Tau and Spearman. Pearson is the default, and was used in this analysis [c5]. The Pearson correlation coefficient is defined as "the ratio between the covariance of two variables and the product of their standard deviations" [g5], where covariance in probability theory and statistics is a measure of the joint variability of two random variables, X and Y, and is defined as "the expected value (or mean) of the product of the deviations of X and Y from their individual expected values"[g6] - or, in other words, how closely change in one is related to change in the other.  
 
-Pearson's correlation coefficient is essentially a normalized measurement of the covariance, such that the result always has a value between −1 and 1" [g5]. Covariance is defined as a measure of the joint variability of two random variables [g6], or in other words, how closely change in one is related to change in another. If both increase together, the covariance will be positive. If one decreases as the other increases, the covariance will be negative, denoting an inverse relationship. This can be seen in Figure 3.  
+Pearson's correlation coefficient is essentially a normalized measurement of the covariance, such that the result always has a value between −1 and 1 [g5]. If both increase together, the covariance will be positive. If one decreases as the other increases, the covariance will be negative, denoting an inverse relationship. This can be seen in the examples in Figure 3a and 3b.
 
-**Figure 3 - Scatter diagrams with various values of ρ, the correlation coefficient**  
-
-<img src="images/correlation_coefficient.png" width="438" height="240">    
-Source [g5]
+**Figures 3a and 3b - Scatter diagrams with various values of ρ, the correlation coefficient**  
+<img src="images/correlation_coefficient.png" width="375" height="200">
+<img src="images/correlation.png" width="375" height="200">  
+Source [g5]  
+<a name="Figure_3ab"></a>
 
 The lower the correlation value in absolute terms, the weaker the relationship between the x and y variables. For example, 0.8 or -0.8 implies a strong relationship between the x and y variable; whereas a correlation of 0.2 or -0.2 implies a weak relationship.  
 Note that the Pearson correlation coefficient is symmetric: corr(X,Y) = corr(Y,X) [g5].  
@@ -158,7 +168,7 @@ In this program, the NumPy ployfit method is used. This method supports both lin
 where order = 1 for linear regression. The Ordinary Least Squares method is used to calculate the best fit [c7], [g11].
 
 ## Program Outputs
-<a name="Program-Outputs"></a> 
+<a name="Program-Outputs"></a>
 The user is presented with the following menu:
 
     Enter one of the following:
@@ -172,6 +182,8 @@ The user is presented with the following menu:
     Enter choice:
 
 ### Option 1 - Statistical Summary  
+<a name="Option-1---Statistical-Summary"></a>
+
 When this option is chosen, the following summary data is written to *iris_summary.txt*.  
   
     Overall summary for the iris dataset
@@ -218,8 +230,9 @@ The sepal lengths and sepal widths paint a much less clear picture, as all 3 of 
 In summary the statistics indicate that we should consider the data for each species individually, as too much detail is lost by averaging across the iris data set as a whole.
 
 ### Option 2 - Histograms  
-<a name="Option-2---Histograms"></a>  
-Choosing this option causes a set of 12 histograms to be drawn, representing the 4 attributes (petal length, petal width, sepal length, sepal width) for each of the 3 species. The plots are drawn as a set of axes in a single figure, using the *subplots()* method in Matplotlib.  
+<a name="Option-2---Histograms"></a>
+
+Choosing this option causes a set of 12 histograms to be drawn, representing the 4 attributes (petal length, petal width, sepal length, sepal width) for each of the 3 species. Matplotlib's *plt.subplots()* is used to create the figure and axes. The *Axes.hist()* method is used to draw the individual subplots.
   
 **Figure 6 - *Iris* attribute histograms by species**  
 <img src="hist_all.png" width="900" height="600">  
@@ -247,19 +260,23 @@ Density plots are included and show the spread for each atribute.
 <img src="hist_sepal_width.png" width="750" height="250">  
   
 #### Observations  
-This is just a slightly different way of presenting the histograms already reviewed in [Option 2](#Option-2---Histograms) above.  
+This is just a slightly different way of presenting the histograms already reviewed in [Option 2](#Option-2---Histograms) above. The density plots superimposed on the histograms give a view of the spread of each attribute. As expected, those with the widest spreads as shown in the density plots (e.g. *viginica* sepal length) align with the species attributes with the largest standard deviations (std) as summarized in [Option 1](#Option-1---Statistical-Summary).
 
+### Option 4 - Scatter Plots  
+The attributes are plotted pairwise in scatter plots, colour-coded by species.  
+   
+The purpose of a scatter plot is to visualize the relationship between two attributes or variables. One of the variables is plotted on the x-axis; and the other is plotted on the y-axis. For the Iris data set, we will need 6 plots (axes) as the number of pairwise scatter plots for 4 variables will be (4 x 3)/2 = 6 in total.  
+  
+Matplotlib's *plt.subplots()* is used to create the figure and axes. The *Axes.scatter()* method is used to draw the individual subplots.  
 
-### Option 4 - Scatter Plots
-
-    3 for histograms and density plots representing the individual iris variables written to 4 files
-    4 for a set of scatter plots representing the iris dataset variables
+**Figure 11 - *Iris* attribute pair-wise scatter plots, colour-coded by species**  
+<img src="scatter_plt.png" width="750" height="600">  
 
 #### Observations  
-Each
+The scatter plots reinforce the [previous conclusion](#Option-1---Statistical-Summary) that the *setosa* species is linearly separable from *versicolor* and *virginica*; however the latter 2 are not linearly separable, with significant overlap in the scatter plots [g7]. In the case of sepal length and sepal width, there is overlap between *setosa* and the other species; we have [previously noted](#Option-1---Statistical-Summary) overlap in sepal length and sepal width across all 3 species.
 
 ### Option 5 - Correlation & Heatmaps  
-When this option is chosen, the correlation summary data is written to - *iris_correlation.txt*.   
+When this option is chosen, the following correlation summary data is written to - *iris_correlation.txt*.  
     
     Correlation summary for all iris species
                 petal_length  petal_width  sepal_length  sepal_width
@@ -288,13 +305,45 @@ When this option is chosen, the correlation summary data is written to - *iris_c
     petal_width       0.322108     1.000000      0.281108     0.537728
     sepal_length      0.864225     0.281108      1.000000     0.457228
     sepal_width       0.401045     0.537728      0.457228     1.000000
-
-  Test here  
-    
-![Iris correlation](images/corr_iris.png)  
   
+As discussed in the Correlation section [above](#Correlation), correlation is a measure of the relationship between 2 variables and considers how closely a change in one is related to a change in the other. The default method used by Pandas *corr()* is the Pearson correlation coefficient, which is normalized to between -1 and 1.  A higher correlation value **in absolute terms** implies a stronger relationship between the variables. This may be seen more clearly in the following heatmap, drawn by the Seaborn *heatmap()* function.  
+    
+**Figure 12 - *Iris* correlation heatmap**  
+![Iris correlation](images/corr_iris.png)  
+   
+Note that it consists of 4 individual heatmaps (axes) plus one colour bar. Lighter colours denote a stronger correlation.
+Also note that the correlations are symmetric, as noted in the Correlation section [above](#Correlation) - so for example, *Iris* petal length vs petal width AND *Iris* petal width vs petal length are both 0.962865.
+
 #### Observations
-Negative correlations for the iris overall are positive for each of the species. When the best fit lines for those pairs of variables aer viewed in graphical form, the reason can clearly clearly see clear to see.
+One interesting observation is that looking at the Iris data set overall is quite misleading.
+For example, the correlation coefficient for petal length vs petal width for *Iris* is 0.962865, which implies a close to linear relatinship. However, the correlation coefficient for petal length vs petal width for each of the 3 species is as follows:  
+|species | correlation |
+|--------|-------------|
+|*setosa* | 0.331630 | 
+|*versicolor* | 0.786668 |
+|*virginica* | 0.322108 |
+  
+None of these approach 0.962865. So why is the coefficient for *iris* so much higher? Let's look at just the scatter plot for petal length vs petal width.
+
+**Figure 13 - *Iris* petal length vs. petal width**  
+<img src="scatter_petal.png" width="280" height="280">  
+
+In this plot, while each of the individual species looks more like a cluster (less correlated), when they are considered together they appear more linear. If we just looked at *setosa*, for example, it looks more like the cluster with a correlation coefficient of </= 0.4 in [Figure 3b](#Figure_3ab) above - which aligns with the calculated value for *setosa* of 0.331630. However, the overall set of points for *Iris* looks far more linear, i.e. more like the cluster with a correlation coefficient of >/= 0.8, which again aligns with the calculated value for *Iris* of 0.962865. This will be clearer when we look at the best fit lines in the next section.  
+  
+One other observation is that some correlation coefficients are negative for *Iris* (e.g. sepal width vs. petal width is -0.366126), implying that the sepal width decreases as the petal width increases - whereas the same correlation coefficients are positive for the individual species:  
+|species | correlation |
+|--------|-------------|
+|*setosa* | 0.232752 | 
+|*versicolor* | 0.663999 |
+|*virginica* | 0.537728 |
+
+The reson for this becomes clearer if we look at the scatter plot for petal with vs sepal width, each of the 3 invididual species shows a positive correlation, i.e. the sepal width increases as the petal width increases.
+  
+**Figure 14 - *Iris* petal width vs. sepal width**  
+<img src="scatter_sepal.png" width="280" height="280">  
+  
+ However, looking at the *Iris* data set as a whole, the sepal width appears to decrease as the petal width increases (i.e. a negative correlation). This aghain will be clearer as we look at the best fit lines in the next section.
+
 
 ### Option 6 - Best Fit  
 text here  
@@ -305,17 +354,16 @@ text here
 1. The best fit line for all species has a positive slope in all cases, which implies that as one attribute increases, the other is also likely to increase.
 
 
+
+
 ## How to use this Repository
-
-
-
-
 
 Note to self - review this - https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes
 
 
 # References  
 <a name="References"></a>  
+
 ## Methodology  
 Since markdown doesn't support superscripts, the paragraph, quotation or figure are followed by the applicable reference or citation in square brackets. The references are listed below, and are prefixed with 'g' or 'c' depending on whether they're in the list of general or code references. So, for example, [g7] refers to item 7 in the General Reference list below.
 
@@ -347,8 +395,7 @@ Code references are prefixed with 'c'.
 References that are not explicitly linked to a specific part of the document but of general use.  
 1. [Linking within a Markdown document](https://stackoverflow.com/questions/2822089/how-to-link-to-part-of-the-same-document-in-markdown)  
 2. [Displaying and resizing images in Markdown](https://www.markdownguide.org/hacks/#:~:text=If%20you%20need%20to%20resize,of%20an%20image%20in%20pixels.&text=The%20rendered%20output%20will%20contain,to%20the%20dimensions%20you%20specified.)
-2. [Iris data set analysis in Kaggle](https://www.kaggle.com/search?q=iris+dataset+analysis)  
-
+3. [Iris data set analysis in Kaggle](https://www.kaggle.com/search?q=iris+dataset+analysis)  
 
 ****
 #### End
