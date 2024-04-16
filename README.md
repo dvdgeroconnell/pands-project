@@ -13,7 +13,7 @@
 # Table of Contents
 [Purpose of this Repository](#Purpose-of-this-Repository)  
 [References](#References)  
-[Option 2](#Option-2:-Histograms)  
+[Option 2](#Option-2-Histograms)  
 
 ## Purpose of this Repository  
 <a name="Purpose-of-this-Repository"></a>  
@@ -217,8 +217,8 @@ The sepal lengths and sepal widths paint a much less clear picture, as all 3 of 
   
 In summary the statistics indicate that we should consider the data for each species individually, as too much detail is lost by averaging across the iris data set as a whole.
 
-<a name="Option-2:-Histograms"></a>  
-### Option 2: Histograms  
+<a name="Option-2-Histograms"></a>  
+### Option 2 Histograms  
 
 Choosing this option causes a set of 12 histograms to be drawn, representing the 4 attributes (petal length, petal width, sepal length, sepal width) for each of the 3 species. The plots are drawn as a set of axes in a single figure, using the *subplots()* method in Matplotlib.  
   
@@ -248,7 +248,7 @@ Density plots are included and show the spread for each atribute.
 <img src="hist_sepal_width.png" width="750" height="250">  
   
 #### Observations  
-This is just a slightly different way of presenting the histograms already reviewed in [Option 2](#Option-2:-Histograms) above.  
+This is just a slightly different way of presenting the histograms already reviewed in [Option 2](#Option-2-Histograms) above.  
 
 
 ### Option 4 - Scatter Plots
