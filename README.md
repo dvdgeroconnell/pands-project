@@ -137,10 +137,10 @@ The method of correlation may be one of Pearson, Kendall-Tau and Spearman. Pears
 Pearson's correlation coefficient is essentially a normalized measurement of the covariance, such that the result always has a value between −1 and 1 [g5]. If both increase together, the covariance will be positive. If one decreases as the other increases, the covariance will be negative, denoting an inverse relationship. This can be seen in the examples in Figure 3a and 3b.
 
 **Figures 3a and 3b - Scatter diagrams with various values of ρ, the correlation coefficient**  
+<a name="Figure_3ab"></a>
 <img src="images/correlation_coefficient.png" width="375" height="200">     <img src="images/correlation.png" width="375" height="200">  
 Source [g5]  
-<a name="Figure_3ab"></a>
-
+  
 The lower the correlation value in absolute terms, the weaker the relationship between the x and y variables. For example, a correlation of 0.8 or -0.8 implies a strong relationship between the x and y variable; whereas a correlation of 0.2 or -0.2 implies a weak relationship.  
 Note that the Pearson correlation coefficient is symmetric: corr(X,Y) = corr(Y,X) [g5].  
 
@@ -250,7 +250,7 @@ Looking at the petal length and petal width columns, the separation of the *Iris
 Also as previously observed, the sepal length and sepal width attributes clearly overlap for all 3 species. Those attributes cannot be used to definitively distinguish between species.  
   
  ### Option 3 - Individual Histograms  
-The following histograms each represent a single attribute as a row, with a plot per species. Density plots are included and show the spread for each atribute. The output is saved to 4 files:
+The following histograms each represent a single attribute as a row, with a plot per species. Density plots are included and show the spread for each attribute. The output is saved to 4 files:
 - *hist_petal_length.png*  
 - *hist_petal_width.png*  
 - *hist_sepal_length.png*  
@@ -287,9 +287,9 @@ The same plot was created using Seaborn *pairplot()* - one line of code can repl
 <img src="scatter_sns.png" width="750" height="600">  
 
 #### Observations  
-1. The scatter plots reinforce the [previous conclusion](#Observations1) that the *setosa* species is linearly separable from *versicolor* and *virginica*; however the latter 2 are not linearly separable, with significant overlap in the scatter plots [g7]. In the case of sepal length and sepal width, there is overlap between *setosa* and the other species; we have [previously noted](#Option-1---Statistical-Summary) overlap in sepal length and sepal width across all 3 species.  
+1. The scatter plots reinforce the [previous conclusion](#Observations1) in Option 1 that the *Iris setosa* species is linearly separable from *Iris versicolor* and *Iris virginica*; however the latter 2 are not linearly separable, with significant overlap in the scatter plots [g7]. In the case of sepal length and sepal width, there is overlap between *Iris setosa* and the other species; in Option 1, we have [previously noted](#Observations1) overlap in sepal length and sepal width across all 3 species.  
 
-2. The density subplots on the diagonal of the Seaborn-generated plot also confirm [previously noted](#Option-1---Statistical-Summary) observations above, that the *setosa* petal length and petal width are tightly clustered and are smallest in size, that there is overlap between *versicolor* and *virginica* petal length and petal width; and there is broad overlap and a wider spread across all 3 species for sepal length and sepal width.  However, on the latter point, when sepal length vs sepal width is viewed in a scatter plot there is separation between *setosa* and the other 2 species.
+2. The density subplots on the diagonal of the Seaborn-generated plot also confirm [previously noted](#Observations1) observations above, that the *Iris setosa* petal length and petal width are tightly clustered and are smallest in size, that there is overlap between *Iris versicolor* and *Iris virginica* petal length and petal width; and there is broad overlap and a wider spread across all 3 species for sepal length and sepal width.  However, on the latter point, when sepal length vs sepal width is viewed in a scatter plot there is separation between *Iris setosa* and the other 2 species.
 
 ### Option 5 - Correlation & Heatmaps  
 <a name="Option-5---Correlation-&-Heatmaps"></a>
@@ -324,89 +324,84 @@ When this option is chosen, the following correlation summary data is written to
     sepal_length      0.864225     0.281108      1.000000     0.457228
     sepal_width       0.401045     0.537728      0.457228     1.000000
   
-As discussed in the Correlation section [above](#Correlation), correlation is a measure of the relationship between 2 variables and considers how closely a change in one is related to a change in the other. The default method used by Pandas *corr()* is the Pearson correlation coefficient, which is normalized to between -1 and 1.  A higher correlation value **in absolute terms** implies a stronger relationship between the variables. This may be seen more clearly in the following heatmap, drawn by the Seaborn *heatmap()* function.  
+As discussed in the Correlation section [above](#Correlation), correlation is a measure of the relationship between 2 variables and considers how closely a change in one is related to a change in the other. The default method used by Pandas *corr()* is the Pearson correlation coefficient, which is normalized to between -1 and 1.  A higher correlation value **in absolute terms** implies a stronger relationship between the variables. This may be seen more clearly in the following heatmap, drawn using the Seaborn *heatmap()* function.  
     
 **Figure 12 - *Iris* correlation heatmap**  
 ![Iris correlation](images/corr_iris.png)  
    
 Note that it consists of 4 individual heatmaps (axes) plus one colour bar. Lighter colours denote a stronger correlation.
-Also note that the correlations are symmetric, as noted in the Correlation section [above](#Correlation) - so for example, *Iris* petal length vs petal width AND *Iris* petal width vs petal length are both 0.962865.
+Also note that the correlations are symmetric, as noted in the Correlation section [above](#Correlation) - so for example, Iris petal length vs petal width AND Iris petal width vs petal length are both 0.962865.
 
 #### Observations
-One interesting observation is that looking at the Iris data set overall is quite misleading. At a glance, the *Iris* heatmap is much lighter in colour than the individual species heatmaps for 3 of the 4 attributes. For example, the correlation coefficient for petal length vs petal width for *Iris* is 0.962865, which implies a close to linear relationship. However, the correlation coefficient for petal length vs petal width for each of the 3 species is as follows:  
+One interesting observation is that looking at the Iris data set overall is quite misleading. At a glance, the Iris heatmap is much lighter in colour than the individual species heatmaps for 3 of the 4 attributes. For example, the correlation coefficient for petal length vs petal width for Iris is 0.962865, which implies a close to linear relationship. However, the correlation coefficient for petal length vs petal width for each of the 3 species is as follows:  
 |species | correlation |
 |--------|-------------|
-|*setosa* | 0.331630 | 
-|*versicolor* | 0.786668 |
-|*virginica* | 0.322108 |
+|*Iris setosa* | 0.331630 | 
+|*Iris versicolor* | 0.786668 |
+|*Iris virginica* | 0.322108 |
   
-None of these approach 0.962865. So why is the coefficient for *iris* so much higher? Let's look at just the scatter plot for petal length vs petal width.
+None of these approach 0.962865. So why is the coefficient for Iris so much higher? Let's look at just the scatter plot for petal length vs petal width.
 
 **Figure 13 - *Iris* petal length vs. petal width**  
 <img src="scatter_petal.png" width="280" height="280">  
 
-In this plot, while each of the individual species looks more like a cluster (less correlated), when they are considered together they appear more linear. If we just looked at *setosa*, for example, it looks more like the cluster with a correlation coefficient of </= 0.4 in [Figure 3b](#Figure_3ab) above - which aligns with the calculated value for *setosa* of 0.331630. However, the overall set of points for *Iris* looks far more linear, i.e. more like the cluster with a correlation coefficient of >/= 0.8 in [Figure 3b](#Figure_3ab), which again aligns with the calculated value for *Iris* of 0.962865. This will become clearer when we look at the best fit lines in the next section.  
+In this plot, while each of the individual species looks more like a cluster (less correlated), when they are considered together they appear more linear. If we just looked at *Iris setosa*, for example, it looks more like the cluster with a correlation coefficient of </= 0.4 in the example in [Figure 3b](#Figure_3ab) above - which aligns with the calculated value for *Iris setosa* of 0.331630. However, the overall set of points for Iris looks far more linear, i.e. more like the cluster with a correlation coefficient of >/= 0.8 in the example in [Figure 3b](#Figure_3ab), which again aligns with the calculated value for Iris of 0.962865. This will become clearer when we look at the best fit lines in the next section.  
   
-One other observation is that some correlation coefficients are negative for *Iris* (e.g. sepal width vs. petal width is -0.366126), implying that the sepal width decreases as the petal width increases - whereas the same correlation coefficients are positive for the individual species:  
+One other observation is that some correlation coefficients are negative for Iris (e.g. sepal width vs. petal width is -0.366126), implying that the sepal width decreases as the petal width increases - whereas the same correlation coefficients are positive for the individual species:  
 |species | correlation |
 |--------|-------------|
-|*setosa* | 0.232752 | 
-|*versicolor* | 0.663999 |
-|*virginica* | 0.537728 |
+|*Iris setosa* | 0.232752 | 
+|*Iris versicolor* | 0.663999 |
+|*Iris virginica* | 0.537728 |
 
 The reason for this becomes clearer if we look at the scatter plot for petal with vs sepal width, each of the 3 invididual species shows a positive correlation, i.e. the sepal width increases as the petal width increases.
   
-**Figure 14 - *Iris* petal width vs. sepal width**  
+**Figure 14 - Iris petal width vs. sepal width**  
 <img src="scatter_sepal.png" width="280" height="280">  
   
- However, looking at the *Iris* data set as a whole, the sepal width appears to decrease as the petal width increases (i.e. a negative correlation). This again will become clearer as we look at the best fit lines in the next section.
+ However, looking at the Iris data set as a whole, because the sepal widths for *Iris setosa* are higher in value, the sepal width appears to decrease as the petal width increases (i.e. a negative correlation). This again will become clearer when we look at the best fit lines in the next section.
 
 ### Option 6 - Best Fit  
 When this option is chosen, the scatter plots are drawn with superimposed best fit lines, as calculated by *numpy.polyfit()*. The output is saved to *bestfit_plt.txt*.
 As discussed in the [Best Fit](#Best-Fit) section above, a best fit or regression line is intended to represent a set of points such that the sum of the squared distance from each point to the line is minimized. The simplest case, which we've applied here, is linear regression, where the solution is a straight line (first order polynomial).  
 
-**Figure 15 - *Iris* attribute-pair scatter plots and best-fit lines, colour coded by species (Matplotlib)**  
+**Figure 15 - Iris attribute-pair scatter plots and best-fit lines, colour coded by species (Matplotlib)**  
 ![Best Fit - NumPy, Pyplot](images/bestfit_plt_1.png)  
 
-The best fit lines have been drawn per species, because we have concluded from the correlation results that it can be misleading to look atthe *Iris* data set as a whole. This is further demonstrated in 2 of the plots, where a best fit line has been drawn for the *Iris* data set as well as for the individual species.  
+The best fit lines have been drawn per species, because we have concluded from the correlation results that it can be misleading to look at the Iris data set as a whole. This is further demonstrated in 2 of the axes, where a best fit line has been drawn for the Iris data set as well as for the individual species.  
   
-A similar plot using Seaborn was also generated, however, it offers no new insights and is not included here for conciseness. It can be viewed in 
+A similar plot using Seaborn was also generated, however, it offers no new insights (aside from major code simplification) and is not included here for conciseness. It can be viewed in the repository as *bestfit_sns.png*.
 
 #### Observations
 A number of observations can be made:
-1. The top left plot, i.e. petal width vs. petal length, demonstrates the conclusion that we had reached above, i.e. that the *Iris* data set as a whole looks quite linear as represented by the spread of points around the purple line, while the data for the individual species looks far less correlated, as represented by the spread of points around the individual black lines. This aligns with what the correlation coefficients were indicating - very close to 1 for *Iris* overall, much lowe for the individual species.  
+1. The top left axes, i.e. petal width vs. petal length, demonstrates the conclusion that we had reached above, i.e. that the Iris data set as a whole looks quite linear as represented by the spread of points around the purple line, while the data for the individual species looks far less correlated, as represented by the spread of points around the individual black lines. This aligns with what the correlation coefficients were indicating - very close to 1 for Iris overall, but much lower for the individual species.  
   
     **Petal Length vs. Petal Width**  
     | species | correlation |  
     |--------|-------------|  
-    | *Iris  | 0.962865 |  
-    |*setosa* | 0.331630 |   
-    |*versicolor* | 0.786668 |  
-    |*virginica* | 0.322108 |  
+    | Iris  | 0.962865 |  
+    |*Iris setosa* | 0.331630 |   
+    |*Iris versicolor* | 0.786668 |  
+    |*Iris virginica* | 0.322108 |  
   
 2. We can also observe that the best fit line for each species in every scatter plot has a positive slope, which corresponds to a positive correlation coefficient - as one attribute increases, the other one also tends to increase. This lines up with the table and heatmap in the [Correlation & Heatmaps](#Option-5---Correlation-&-Heatmaps) section above.  
-However, in some cases the *Iris* data set best fit line has a negative slope for example the middle plot in the bottom row, sepal width vs sepal length. This is because the best fit line is fitting sets of data that are not correlated with each other. In this case, the overall *Iris* data set correlation coefficient is completely misleading, and the coefficients for the individual species should be used.  
+However, in some cases the Iris data set best fit line has a negative slope for example the middle plot in the bottom row, sepal width vs sepal length. This is because the best fit line is fitting clusters of data that are not correlated with each other. In this case, the overall Iris data set correlation coefficient is completely misleading, and the coefficients for the individual species should be used.  
 
 
 # Conclusions
 <a name="Conclusions"></a> 
-One conclusion that I reached and which is likely applicable to other data sets made up of multiple species or groups, is that applying analysis tools to the data set as a whole could be misleading and could lead to incorrect conclusions. For example, the correlation coefficients for attribute pairs across the *Iris* data set were quite misleading, and they really needed to be calculated at a species level to be meaningful.  
+One conclusion that I reached and which is likely applicable to other data sets made up of multiple species or groups, is that applying analysis tools to the data set as a whole could be misleading and could lead to incorrect conclusions. For example, the correlation coefficients for attribute pairs across the Iris data set were quite misleading, and they really needed to be calculated at a species level to be meaningful.  
   
 A follow on conclusion from that is that use of appropriate visualization tools and techniques can help identify misleading results from an initial analysis of summary statistics or correlation heatmaps, that may not otherwise be obvious.
-For example, the best line fits for *Iris* petal length versus petal width as opposed to the best line fits for each species individually clearly demonstrated that the correlation coefficient for Iris as a whole was misleading. Similarly, the best fit line for *Iris* petal width versus sepal width was completely misleading in that it implied that sepal width decreased as petal width increased. The best fit lines for each species needed to be looked at to reveal the true picture.
+For example, the best line fits for Iris petal length versus petal width overall, as opposed to the best line fits for each species individually, clearly demonstrated that the correlation coefficient for Iris as a whole was misleading. Similarly, the best fit line for Iris petal width versus sepal width overall was completely misleading in that it implied that sepal width decreased as petal width increased. The best fit lines for each species needed to be looked at to reveal the true picture.
 
-Key conclusions on the *Iris* data set itself are that *setosa* is most easily distginuished, as it has the smallest petal length, petal width and sepal length of the 3 species, although it tends to have the larger sepal width. There is more overlap and spread in values for all attributes across the *versicolor* and *virginica* species. The attribute-pair scatter plots did show separation for *setosa* across all attribute combinations, and although in some cases the *versicolor* and *virginica* groupings are distinguishable from each other, in other cases they completely overlap (for example sepal length vs. sepal width).  
+Conclusions on the Iris data set itself are that *Iris setosa* is most easily distginuished, as it has the smallest petal length, petal width and sepal length of the 3 species, although it tends to have the larger sepal width. There is more overlap and spread in values for all attributes across the *Iris versicolor* and *Iris virginica* species. The attribute-pair scatter plots did show separation for *Iris setosa* across all pair-wise attribute combinations, and although in some cases the *Iris versicolor* and *Iris virginica* groupings are distinguishable from each other, in other cases they completely overlap (for example sepal length vs. sepal width).  
   
-From a coding perspective, it is clear that using Pandas and Seaborn can save significant time and effort as opposed to just using NumPy and Matplotlib. The point is to not focus on writing code for data extraction and visualization - Pandas and Seaborn can do these in a few lines - but rather to concentrate on actually analyzing the data. I decided to explore both methods as a learning exercise, and this certainly demonstrated the power, versatility and ease-of-use of the Pandas and Seaborn packages.  
-
-## How to use this Repository
-
-Note to self - review this - https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes
-
-
+A conclusion from a coding perspective is that using Pandas and Seaborn as opposed to just NumPy and Matplotlib can save significant time and effort. The point is to not focus on writing code for data extraction and visualization - Pandas and Seaborn can do these in a few lines - but rather to concentrate on actually analyzing the data. I decided to explore both methods as a learning exercise, and this certainly demonstrated the power, versatility and ease-of-use of the Pandas and Seaborn packages.  
+  
 # References  
 <a name="References"></a>  
-
+  
 ## Methodology  
 Since markdown doesn't support superscripts, the paragraph, quotation or figure are followed by the applicable reference or citation in square brackets. The references are listed below, and are prefixed with 'g' or 'c' depending on whether they're in the list of general or code references. So, for example, [g7] refers to item 7 in the General Reference list below.
 
