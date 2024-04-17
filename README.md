@@ -28,7 +28,7 @@ This repository contains the files associated with the Programming and Scripting
 Link to repository - [PANDS Project](https://github.com/dvdgeroconnell/pands-project.git).  
   
 ### A Caveat on Links  
-Links to other points within the document are used throughout. They do not work consistently when viewed in Visual Studio Code. The links do work when viewed in GitHub Markdown, however sometimes the link takes you to the section just below the anchor. This is a minor issue, but I could not find a fix for it on line. 
+Links to other points within the document are used in places. They do not work consistently when viewed in Visual Studio Code. The links do work when viewed in GitHub Markdown, however sometimes the link takes you to the section just below the anchor. This is a minor issue, but I could not find a fix for it on line. 
   
 
 # Project Summary
