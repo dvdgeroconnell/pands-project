@@ -26,6 +26,10 @@
 This repository contains the files associated with the Programming and Scripting final project, the subject of which is an analysis of Fisher's iris data set.  
   
 Link to repository - [PANDS Project](https://github.com/dvdgeroconnell/pands-project.git).  
+  
+### A Caveat on Links  
+Links to other points within the document are used throughout. They do not work consistently when viewed in Visual Studio Code. The links do work when viewed in GitHub Markdown, however sometimes the link takes you to the section just below the anchor.  
+  
 
 # Project Summary
 <a name="Project-Summary"></a>
