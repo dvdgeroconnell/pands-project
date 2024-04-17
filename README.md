@@ -3,7 +3,7 @@
   
 | Topic | Details |
 |---------|-------------|
-| **Module:**  | Programming and Scripting  |
+| **Module:**  | 8632 - Programming and Scripting  |
 | **Lecturer:**  | Andrew Beatty  | 
 | **Course:**  | Diploma in Science in Computing (Data Analytics)  |
 | **Year/Semester:**  | Year 1/Semester 1  |
@@ -24,15 +24,16 @@
 # Purpose of this Repository  
 <a name="Purpose-of-this-Repository"></a>
 This repository contains the files associated with the Programming and Scripting final project, the subject of which is an analysis of Fisher's iris data set.  
+  
 Link to repository - [PANDS Project](https://github.com/dvdgeroconnell/pands-project.git).  
 
 # Project Summary
 <a name="Project-Summary"></a>
 
 ## Problem Statement  
-The following is summarized from the detailed Project Description in [g2].
-The project is about researching and analyzing the well-known Fisher’s Iris data set [g1]. The investigation requires documentation and code (in Python [c6]) to be written. The project will need to be broken into several smaller tasks that are easier to solve, and these will need to be plugged together once they have been completed. Steps to follow:
-
+The following is summarized from the detailed Project Description in [g2].  
+The project is about researching and analyzing the well-known Fisher’s Iris data set [g1]. The investigation requires documentation and code (in Python [c6]) to be written. The project will need to be broken into several smaller tasks that are easier to solve, and these will need to be plugged together once they have been completed. Steps to follow:  
+  
 1. Research the data set online and write a summary about it in the README.
 2. Download the data set and add it to the repository.
 3. Write a program called analysis.py that:
@@ -40,12 +41,13 @@ The project is about researching and analyzing the well-known Fisher’s Iris da
     2. Saves a histogram of each variable to png files, and
     3. Outputs a scatter plot of each pair of variables
     4. Performs any other analysis you think is appropriate
-
-The requirement for original text and analysis is emphasized in the Project Description.
+  
+The requirement for original text and analysis is emphasized in the Project Description.  
 
 ## Approach
-While it was left open as to whether to create a Jupyter notebook as well as the README, I decided to capture the reasearch and analysis in the README to avoid repetition and / or referencing over and back between documents.
-The primary Python packages used were the NumPy, Matplotlib Pandas and Seaborn packages. For the scatter plots and best fit lines, I used both Numpy / Matplotlib and Seaborn as a comparison. 
+While it was left open as to whether to create a Jupyter notebook as well as the README, I decided to capture the research and analysis in the README to avoid repetition and / or cross-referencing between multiple documents.  
+  
+The primary Python packages used were the NumPy, Matplotlib Pandas and Seaborn packages. For the scatter plots and best fit lines, I used both Numpy / Matplotlib and Seaborn as a comparison.  
 
 # Background - Fisher's Iris Data Set  
 <a name="Background---Fisher's-Iris-Data-Set"></a>
@@ -61,12 +63,13 @@ The data set contains 150 sets of measurements, consisting of a set of 50 measur
 ![Iris characteristics](images/iris_characteristics.png)  
 Source [g4]
 
-The data set is often called "Fisher's Iris data set" as it was presented as an example of linear discriminant analysis in a 1936 paper, *"The use of multiple measurements in taxonomic problems"* by the British statistician and biologist [Ronald A. Fisher](https://en.wikipedia.org/wiki/Ronald_Fisher). [Linear discriminant analysis](https://en.wikipedia.org/wiki/Linear_discriminant_analysis) is a method used in statistics, and other fields, to find a linear combination of features that characterizes or separates two or more classes of objects or events. Fisher used the Iris data set to demonstrate how his linear discriminant model could be used to distinguish the 3 species from each other based on the 4 known attributes [g1]. The paper is available [here](https://digital.library.adelaide.edu.au/dspace/handle/2440/15227).  
-
+The data set is often called "Fisher's Iris data set" as it was presented as an example of linear discriminant analysis in a 1936 paper, *"The use of multiple measurements in taxonomic problems"* by the British statistician and biologist [Ronald A. Fisher](https://en.wikipedia.org/wiki/Ronald_Fisher). [Linear discriminant analysis](https://en.wikipedia.org/wiki/Linear_discriminant_analysis) is a method used in statistics and other fields to find a linear combination of features that characterizes or separates two or more classes of objects or events. Fisher used the Iris data set to demonstrate how his linear discriminant model could be used to distinguish the 3 species from each other based on the 4 measured attributes [g1].  
+The paper is available [here](https://digital.library.adelaide.edu.au/dspace/handle/2440/15227).  
+  
 This data set is widely used in field of statistical data analysis and pattern recognition / machine learning.  
 It is often used to understand classification and clustering algorithms.   
-
-This data set is particularly popular due to its simplicity and the clear separation of the different species based on the measured attributes. Using the features of the iris flowers, researchers and data scientists can classify each sample into one of the three species. One class (setosa) is linearly separable from the other 2; the other 2 (versicolor and virginica) are not linearly separable from each other [g1], [g7].  
+  
+This data set is particularly popular due to its simplicity and the clear separation of the different species based on the measured attributes. Using those measured attributes, researchers and data scientists can classify each sample into one of the three species. One species (*setosa*) is linearly separable from the other 2; the other 2 species, *versicolor* and *virginica*, are not linearly separable from each other [g1], [g7].  
 
 # Using the Program  
 <a name="Using-the-Program"></a>  
@@ -83,9 +86,9 @@ This data set is particularly popular due to its simplicity and the clear separa
 
 ## Files in this Repository  
 ### iris.csv
-The raw data set in csv format was downloaded from [here](https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv). This csv file has already undergone some cleanup, including the addition of a heaading row and presentation of the different species as simply *setosa*, *versicolor* and *virginica*.  
+The raw data set in csv format was downloaded from [here](https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv). This csv file has already undergone some cleanup and error correction, including the addition of a heading row and presentation of the different species as simply *setosa*, *versicolor* and *virginica*.  
 ### analysis.py  
-This file contains the main Python program to offer the menu options and run the relevant functions based on the menu option chosen.   
+This file contains the main Python program to offer the menu options and run the relevant functions based on the chosen menu option.   
 ### menu.py  
 This file contains a Python function to draw the menu of options, check the entered choice is a valid integer and return the value to the calling program, where the range checking is done.     
 ### write_summary.py  
@@ -96,9 +99,9 @@ This file contains a Python function to calculate the following statistics for t
 - Mean value  
 - Standard Deviation  
 
-The values are written to a text file. The name is displayed to the user.  
+The values are written to a text file. The name of the file is displayed to the user.  
 ### hist_all.py  
-This file contains a Python function to draw the histograms for the iris data set variables by species. There are 12 in total, 4 per species.  
+This file contains a Python function to draw the histograms for the Iris data set variables by species. There are 12 histograms in total, 4 per species, covering:  
 - Petal Length  
 - Petal Width  
 - Sepal Length  
@@ -108,18 +111,18 @@ The histograms are drawn as a single figure, which is then saved to a file. The 
 ### petal.py  
 This file contains 2 Python functions to create histograms of a) the petal length and b) the petal width by species. They are then written to files. The name are displayed to the user.  
 ### sepal.py  
-This file contains 2 Python functions to create histograms of a) the petal length and b) the petal width by species. They are then written to files. The names are displayed to the user.  
+This file contains 2 Python functions to create histograms of a) the sepal length and b) the sepal width by species. They are then written to files. The names are displayed to the user.  
 ### scatter_all.py  
-This file contains a Python function to draw the pairwise scatter plots for the Iris data set variables, colour-coded by species. The scatter plots are drawn as a single figure using both Matplotlib and Seaborn for comparison. They are written to files and the names are displayed to the user.    
+This file contains a Python function to draw the pairwise scatter plots for the Iris data set variables, colour-coded by species. The scatter plots are drawn as a single figure using both Matplotlib and Seaborn for comparison. They are written to files and the names of the files are displayed to the user.    
 ### write_correlation.py  
-This file contains a Python function to calculate the correlation coefficients and draw the heatmaps for the Iris data set, both overall and by species. The heatmaps are drawn as a single figure and saved to a file. The name is displayed to the user. 
+This file contains a Python function to calculate the correlation coefficients and draw the heatmaps for the Iris data set, both overall and by species. The heatmaps are drawn as a single figure and saved to a file. The name of the file is displayed to the user. 
 ### bestfit_all.py  
 A Python function to draw the pairwise scatter plots for the Iris data set variables colour-coded by species. Best fit lines are then calculated using NumPy's ployfit method [c7] and superimposed on the scatter plots. The plots are drawn as a single figure. Seaborn is then used to create similar scatter plots with best fit lines by species for comparison. Both versions are saved to files and the names are displayed to the user.
 
 ## Running the Program
-Clone the GitHub repository using the link in the **Purpose of this Repository** section above [Purpose of this Repository](#Purpose-of-this-Repository).
-Execute the program by typing *"python analysis.py"*. This results in the menu being presented.
-The menu options and their outputs are described in the [Program Outputs](#Program-Outputs) section.
+Clone the GitHub repository using the link in the [Purpose of this Repository](#Purpose-of-this-Repository) section.  
+Execute the program by typing *"python analysis.py"*. This results in the menu being presented.  
+The menu options and their outputs are described in the [Program Outputs](#Program-Outputs) section.  
 
 # Analysis  
 <a name="Analysis"></a>  
