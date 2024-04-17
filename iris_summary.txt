@@ -1,5 +1,5 @@
 
-Overall summary for the iris dataset
+Overall summary for the iris data set
         petal_length  petal_width  sepal_length  sepal_width
 min         1.000000     0.100000      4.300000     2.000000
 max         6.900000     2.500000      7.900000     4.400000
