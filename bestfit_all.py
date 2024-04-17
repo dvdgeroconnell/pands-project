@@ -190,9 +190,10 @@ def bestfit_all(iris):
     plt.savefig(BESTFIT_PLT)
 
     # Now draw a scatter plot for the dataset with Seaborn - it is one line versus all of the code above
+    # Setting kind='reg' adds the liner regression plots 
     # Density plots on the diagonal show the spread of values
-    # Just draw the 6 individual plots (corner=True), do not repeat them above the diagonal
-    sns.pairplot(iris, hue="species", kind='reg', corner=True, plot_kws={'line_kws':{'color':'black'},'ci':None})
+    # Draw all 12 individual plots (corner=False), so we can compare them to the Matplotlib plots
+    sns.pairplot(iris, hue="species", kind='reg', corner=False, plot_kws={'line_kws':{'color':'black'},'ci':None})
     plt.savefig(BESTFIT_SNS)
 
     print("Scatter plots with best fit lines written to", BESTFIT_PLT, "(Pyplot) and", BESTFIT_SNS, "(Seaborn)")
