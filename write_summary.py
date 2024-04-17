@@ -62,7 +62,7 @@ def summary(iris, choice):
 
                 # If "all" is passed, then write statistics for the iris dataset and by species
                 case "all":
-                    f.write("\nOverall summary for the iris dataset\n")
+                    f.write("\nOverall summary for the iris data set\n")
                     f.write(str(result))
                     f.write("\nNote: these statistics are not so meaningful as they are calculated across 3\n")
                     f.write("different species. It is more meaningful to look at the separate summaries for\n")

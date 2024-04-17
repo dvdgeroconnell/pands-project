@@ -1,5 +1,6 @@
-# Programming and Scripting Project - the Iris data set 
-
+# Programming and Scripting Project
+## An Analysis of Fisher's Iris Data Set using Python  
+  
 | Topic | Details |
 |---------|-------------|
 | **Module:**  | Programming and Scripting  |
@@ -8,26 +9,28 @@
 | **Year/Semester:**  | Year 1/Semester 1  |
 | **Student Name:**  | David O'Connell  |
 | **Student ID:**  | G00438912  |
-| **Student Email:**  | G00438912@atu.ie  |
-
-# Table of Contents
+| **Student Email:**  | G00438912@atu.ie  |  
+   
+    
+# Summary Table of Contents
 [Purpose of this Repository](#Purpose-of-this-Repository)  
 [Project Summary](#Project-Summary)  
 [Background - Fisher's Iris Data Set](#Background---Fisher's-Iris-Data-Set)  
 [Using the Program](#Using-the-Program)  
 [Analysis](#Analysis)  
- 
+[Conclusions](#Conclusions)
 [References](#References)  
 
 # Purpose of this Repository  
-<a name="Purpose-of-this-Repository"></a>  
+<a name="Purpose-of-this-Repository"></a>
 This repository contains the files associated with the Programming and Scripting final project, the subject of which is an analysis of Fisher's iris data set.  
 Link to repository - [PANDS Project](https://github.com/dvdgeroconnell/pands-project.git).  
 
 # Project Summary
-<a name="Project-Summary"></a>  
-## Problem Statement
-This is summarized from the detailed Project Description in [g2].
+<a name="Project-Summary"></a>
+
+## Problem Statement  
+The following is summarized from the detailed Project Description in [g2].
 The project is about researching and analyzing the well-known Fisher’s Iris data set [g1]. The investigation requires documentation and code (in Python [c6]) to be written. The project will need to be broken into several smaller tasks that are easier to solve, and these will need to be plugged together once they have been completed. Steps to follow:
 
 1. Research the data set online and write a summary about it in the README.
@@ -38,33 +41,32 @@ The project is about researching and analyzing the well-known Fisher’s Iris da
     3. Outputs a scatter plot of each pair of variables
     4. Performs any other analysis you think is appropriate
 
-The requiremnent for original text and analysis is emphasized in the Project Description.
+The requirement for original text and analysis is emphasized in the Project Description.
 
 ## Approach
-While it was left open as to whether to create a Jupyter notebook as well as the README, it was decided to capture the reasearch and analysis in the README to avoid repetition and / or referencing over and back between documents.
+While it was left open as to whether to create a Jupyter notebook as well as the README, I decided to capture the reasearch and analysis in the README to avoid repetition and / or referencing over and back between documents.
 The primary Python packages used were the NumPy, Matplotlib Pandas and Seaborn packages. For the scatter plots and best fit lines, I used both Numpy / Matplotlib and Seaborn as a comparison. 
 
 # Background - Fisher's Iris Data Set  
-<a name="Background---Fisher's-Iris-Data-Set"></a>  
-
-The Iris flower data set was originally gathered by botanist [Edgar Anderson](https://en.wikipedia.org/wiki/Edgar_Anderson) as part of his work to develop techniques to quantify geographic variation the morphological differences and geographical variations between different species of Iris - Iris setosa, Iris versicolor and Iris virginica.  
+<a name="Background---Fisher's-Iris-Data-Set"></a>
+The Iris flower data set was originally gathered by botanist [Edgar Anderson](https://en.wikipedia.org/wiki/Edgar_Anderson) as part of his work to develop techniques to quantify geographic variation the morphological differences and geographical variations between different species of Iris - *Iris setosa*, *Iris versicolor* and *Iris virginica*.  
 
 **Figure 1 - Iris Species**  
 ![Iris species](images/iris_species_2.png)   
 Source [g8]  
 
-The data set contains 150 sets of measurements, consisting of a set of 50 measurements for each of the 3 species of Iris flowers across 4 attributes, those being petal length, petal width, sepal length and sepal width, measured in centimeters. The measurements cover the sepal and petal length and width for each flower in cm. These are shown in Figure 2 below.  
+The data set contains 150 sets of measurements, consisting of a set of 50 measurements for each of the 3 species of Iris flowers across 4 attributes, those being petal length, petal width, sepal length and sepal width, measured in centimeters. The attributes and how they apply to the flower itself are shown in Figure 2.  
 
 **Figure 2 - Iris Characteristics**  
 ![Iris characteristics](images/iris_characteristics.png)  
 Source [g4]
 
-The dataset is often called "Fisher's Iris data set" as it was presented as an example of linear discriminant analysis in a 1936 paper, *"The use of multiple measurements in taxonomic problems"* by the British statistician and biologist [Ronald A. Fisher](https://en.wikipedia.org/wiki/Ronald_Fisher). [Linear discriminant analysis](https://en.wikipedia.org/wiki/Linear_discriminant_analysis) is a method used in statistics, and other fields, to find a linear combination of features that characterizes or separates two or more classes of objects or events. Fisher used the Iris data set to demonstrate how his linear discriminant model could be used to distinguish the 3 species from each other based on the 4 known attributes [g1]. The paper is available [here](https://digital.library.adelaide.edu.au/dspace/handle/2440/15227).  
+The data set is often called "Fisher's Iris data set" as it was presented as an example of linear discriminant analysis in a 1936 paper, *"The use of multiple measurements in taxonomic problems"* by the British statistician and biologist [Ronald A. Fisher](https://en.wikipedia.org/wiki/Ronald_Fisher). [Linear discriminant analysis](https://en.wikipedia.org/wiki/Linear_discriminant_analysis) is a method used in statistics, and other fields, to find a linear combination of features that characterizes or separates two or more classes of objects or events. Fisher used the Iris data set to demonstrate how his linear discriminant model could be used to distinguish the 3 species from each other based on the 4 known attributes [g1]. The paper is available [here](https://digital.library.adelaide.edu.au/dspace/handle/2440/15227).  
 
 This data set is widely used in field of statistical data analysis and pattern recognition / machine learning.  
 It is often used to understand classification and clustering algorithms.   
 
-This dataset is particularly popular due to its simplicity and the clear separation of the different species based on the measured attributes. Using the features of the iris flowers, researchers and data scientists can classify each sample into one of the three species. One class (setosa) is linearly separable from the other 2; the other 2 (versicolor and virginica) are not linearly separable from each other [g1], [g7].  
+This data set is particularly popular due to its simplicity and the clear separation of the different species based on the measured attributes. Using the features of the iris flowers, researchers and data scientists can classify each sample into one of the three species. One class (setosa) is linearly separable from the other 2; the other 2 (versicolor and virginica) are not linearly separable from each other [g1], [g7].  
 
 # Using the Program  
 <a name="Using-the-Program"></a>  
@@ -81,13 +83,13 @@ This dataset is particularly popular due to its simplicity and the clear separat
 
 ## Files in this Repository  
 ### iris.csv
-The raw dataset in useable csv format was downloaded from [here](https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv). This csv file has already undergone some cleanup, including the addition of a heaading row and presentation of the different species as simply *setosa*, *versicolor* and *virginica*.  
+The raw data set in csv format was downloaded from [here](https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv). This csv file has already undergone some cleanup, including the addition of a heaading row and presentation of the different species as simply *setosa*, *versicolor* and *virginica*.  
 ### analysis.py  
 This file contains the main Python program to offer the menu options and run the relevant functions based on the menu option chosen.   
 ### menu.py  
 This file contains a Python function to draw the menu of options, check the entered choice is a valid integer and return the value to the calling program, where the range checking is done.     
 ### write_summary.py  
-This file contains a Python function to calculate the following statistics for the Iris dataset overall and by species, specifically:  
+This file contains a Python function to calculate the following statistics for the Iris data set overall and by species, specifically:  
 - Minimum value  
 - Maximum value  
 - Median value  
@@ -96,7 +98,7 @@ This file contains a Python function to calculate the following statistics for t
 
 The values are written to a text file. The name is displayed to the user.  
 ### hist_all.py  
-This file contains a Python function to draw the histograms for the iris dataset variables by species. There are 12 in total, 4 per species.  
+This file contains a Python function to draw the histograms for the iris data set variables by species. There are 12 in total, 4 per species.  
 - Petal Length  
 - Petal Width  
 - Sepal Length  
@@ -108,11 +110,11 @@ This file contains 2 Python functions to create histograms of a) the petal lengt
 ### sepal.py  
 This file contains 2 Python functions to create histograms of a) the petal length and b) the petal width by species. They are then written to files. The names are displayed to the user.  
 ### scatter_all.py  
-This file contains a Python function to draw the pairwise scatter plots for the Iris dataset variables, colour-coded by species. The scatter plots are drawn as a single figure using both Matplotlib and Seaborn for comparison. They are written to files and the names are displayed to the user.    
+This file contains a Python function to draw the pairwise scatter plots for the Iris data set variables, colour-coded by species. The scatter plots are drawn as a single figure using both Matplotlib and Seaborn for comparison. They are written to files and the names are displayed to the user.    
 ### write_correlation.py  
-This file contains a Python function to calculate the correlation coefficients and draw the heatmaps for the Iris dataset, both overall and by species. The heatmaps are drawn as a single figure and saved to a file. The name is displayed to the user. 
+This file contains a Python function to calculate the correlation coefficients and draw the heatmaps for the Iris data set, both overall and by species. The heatmaps are drawn as a single figure and saved to a file. The name is displayed to the user. 
 ### bestfit_all.py  
-A Python function to draw the pairwise scatter plots for the Iris dataset variables colour-coded by species. Best fit lines are then calculated using NumPy's ployfit method [c7] and superimposed on the scatter plots. The plots are drawn as a single figure. Seaborn is then used to create similar scatter plots with best fit lines by species for comparison. Both versions are saved to files and the names are displayed to the user.
+A Python function to draw the pairwise scatter plots for the Iris data set variables colour-coded by species. Best fit lines are then calculated using NumPy's ployfit method [c7] and superimposed on the scatter plots. The plots are drawn as a single figure. Seaborn is then used to create similar scatter plots with best fit lines by species for comparison. Both versions are saved to files and the names are displayed to the user.
 
 ## Running the Program
 Clone the GitHub repository using the link in the **Purpose of this Repository** section above [Purpose of this Repository](#Purpose-of-this-Repository).
@@ -157,7 +159,7 @@ Source [g10]
 
 The advantage of linear regression is that it establishes a trend and allows you to make educated guesses about further values. It also allows you to identify outliers - for example, if a data point is way off the best fit line, it may merit further inspection.  
   
-A disadvantage of linear regression model is that it is very unlikely to be a perfect fit to real world data, and you lose visibility to variances within the dataset - this is where the correlation coefficient is useful, as it indicates how well your the is likely to be modelled by a straight line. A higher order polynomial regression model may be a better fit, however it involves increased complexity and is less intuitive [g11].  
+A disadvantage of linear regression model is that it is very unlikely to be a perfect fit to real world data, and you lose visibility to variances within the data set - this is where the correlation coefficient is useful, as it indicates how well your the is likely to be modelled by a straight line. A higher order polynomial regression model may be a better fit, however it involves increased complexity and is less intuitive [g3].  
   
 **Figure 5 - Best Fit / Line**  
 ![linear regression](images/438px-linear_regression.png)  
@@ -167,18 +169,18 @@ In this program, the NumPy ployfit method is used. This method supports both lin
 
 *best_fit = numpy.polyfit(x, y, order)*
 
-where order = 1 for linear regression. The Ordinary Least Squares method is used to calculate the best fit [c7], [g11].
+where order = 1 for linear regression. The Ordinary Least Squares method is used to calculate the best fit [c7], [g3].
 
 ## Program Outputs
 <a name="Program-Outputs"></a>
 The user is presented with the following menu:
 
     Enter one of the following:
-    1 for a statistical summary of the iris dataset to be written to a file
-    2 for a set of histograms representing the iris dataset variables written to a file
+    1 for a statistical summary of the iris data set to be written to a file
+    2 for a set of histograms representing the iris data set variables written to a file
     3 for histograms and density plots representing the individual iris variables written to 4 files
-    4 for a set of scatter plots representing the iris dataset variables
-    5 for the correlation and heatmaps of the iris dataset variables across the species
+    4 for a set of scatter plots representing the iris data set variables
+    5 for the correlation and heatmaps of the iris data set variables across the species
     6 for the best fit line
     0 to quit
     Enter choice:
@@ -188,7 +190,7 @@ The user is presented with the following menu:
 
 When this option is chosen, the following summary data is written to *iris_summary.txt*.  
   
-    Overall summary for the iris dataset
+    Overall summary for the iris data set
             petal_length  petal_width  sepal_length  sepal_width
     min         1.000000     0.100000      4.300000     2.000000
     max         6.900000     2.500000      7.900000     4.400000
@@ -277,15 +279,15 @@ Matplotlib's *plt.subplots()* is used to create the figure and axes. The *Axes.s
 **Figure 11a - *Iris* attribute-pair scatter plots, colour-coded by species (Matplotlib)**  
 <img src="scatter_plt.png" width="750" height="600">  
 
-The same plot was created using Seaborn - one line of code can replace the many required using Matplotlib. Both were used as a learning exercise. The diagonal plots are density plots of the attribute by species. 
+The same plot was created using Seaborn *pairplot()* - one line of code can replace the many required using Matplotlib. Both were used as a learning exercise. The diagonal plots are density plots of the attribute by species. 
 
 **Figure 11b - *Iris* attribute-pair scatter plots, colour-coded by species (Seaborn)**  
 <img src="scatter_sns.png" width="750" height="600">  
 
 #### Observations  
-1. The scatter plots reinforce the [previous conclusion](#Option-1---Statistical-Summary) that the *setosa* species is linearly separable from *versicolor* and *virginica*; however the latter 2 are not linearly separable, with significant overlap in the scatter plots [g7]. In the case of sepal length and sepal width, there is overlap between *setosa* and the other species; we have [previously noted](#Option-1---Statistical-Summary) overlap in sepal length and sepal width across all 3 species.
+1. The scatter plots reinforce the [previous conclusion](#Option-1---Statistical-Summary) that the *setosa* species is linearly separable from *versicolor* and *virginica*; however the latter 2 are not linearly separable, with significant overlap in the scatter plots [g7]. In the case of sepal length and sepal width, there is overlap between *setosa* and the other species; we have [previously noted](#Option-1---Statistical-Summary) overlap in sepal length and sepal width across all 3 species.  
 
-2. The density subplots on the diagonal of the Seaborn-generated plot confirm previous observations, that the *setosa* petal length and petal width are tightly clustered and are smallest in size, that there is overlap between *versicolor* and *virginica* petal length and petal width; and there is overlap across all 3 species for sepal length and sepal width.
+2. The density subplots on the diagonal of the Seaborn-generated plot also confirm [previously noted](#Option-1---Statistical-Summary) observations above, that the *setosa* petal length and petal width are tightly clustered and are smallest in size, that there is overlap between *versicolor* and *virginica* petal length and petal width; and there is broad overlap and a wider spread across all 3 species for sepal length and sepal width.  However, on the latter point, when sepal length vs sepal width is viewed in a scatter plot there is separation between *setosa* and the other 2 species.
 
 ### Option 5 - Correlation & Heatmaps  
 <a name="Option-5---Correlation-&-Heatmaps"></a>
@@ -361,10 +363,12 @@ The reason for this becomes clearer if we look at the scatter plot for petal wit
 When this option is chosen, the scatter plots are drawn with superimposed best fit lines, as calculated by *numpy.polyfit()*. The output is saved to *bestfit_plt.txt*.
 As discussed in the [Best Fit](#Best-Fit) section above, a best fit or regression line is intended to represent a set of points such that the sum of the squared distance from each point to the line is minimized. The simplest case, which we've applied here, is linear regression, where the solution is a straight line (first order polynomial).  
 
-**Figure 15 - *Iris* petal width vs. sepal width**  
+**Figure 15 - *Iris* attribute-pair scatter plots and best-fit lines, colour coded by species (Matplotlib)**  
 ![Best Fit - NumPy, Pyplot](images/bestfit_plt_1.png)  
 
-The best fit lines have been drawn per species, because we have concluded from the correlation results that it can be misleading to look atthe *Iris* data set as a whole. This is further demonstrated in 2 of the plots, where a best fit line has been drawn for the *Iris* data set as well as for the individual species.
+The best fit lines have been drawn per species, because we have concluded from the correlation results that it can be misleading to look atthe *Iris* data set as a whole. This is further demonstrated in 2 of the plots, where a best fit line has been drawn for the *Iris* data set as well as for the individual species.  
+  
+A similar plot using Seaborn was also generated, however, it offers no new insights and is not included here for conciseness. It can be viewed in 
 
 #### Observations
 A number of observations can be made:
@@ -378,13 +382,20 @@ A number of observations can be made:
     |*versicolor* | 0.786668 |  
     |*virginica* | 0.322108 |  
   
-2. We can also observe that the best fit line for each species in every scatter plot has a positive slope, which corresponds to a positive correlation coefficient - as one attribute increases, the other one also tends to increase. This lines up with the table and heatmap in the [Correlation & Heatmaps](#Option-5---Correlation-&-Heatmaps) section above.
+2. We can also observe that the best fit line for each species in every scatter plot has a positive slope, which corresponds to a positive correlation coefficient - as one attribute increases, the other one also tends to increase. This lines up with the table and heatmap in the [Correlation & Heatmaps](#Option-5---Correlation-&-Heatmaps) section above.  
 However, in some cases the *Iris* data set best fit line has a negative slope for example the middle plot in the bottom row, sepal width vs sepal length. This is because the best fit line is fitting sets of data that are not correlated with each other. In this case, the overall *Iris* data set correlation coefficient is completely misleading, and the coefficients for the individual species should be used.  
 
 
 # Conclusions
+<a name="Conclusions"></a> 
+One conclusion that I reached and which is likely applicable to other data sets made up of multiple species or groups, is that applying analysis tools to the data set as a whole could be misleading and could lead to incorrect conclusions. For example, the correlation coefficients for attribute pairs across the *Iris* data set were quite misleading, and they really needed to be calculated at a species level to be meaningful.  
+  
+A follow on conclusion from that is that use of appropriate visualization tools and techniques can help identify misleading results from an initial analysis of summary statistics or correlation heatmaps, that may not otherwise be obvious.
+For example, the best line fits for *Iris* petal length versus petal width as opposed to the best line fits for each species individually clearly demonstrated that the correlation coefficient for Iris as a whole was misleading. Similarly, the best fit line for *Iris* petal width versus sepal width was completely misleading in that it implied that sepal width decreased as petal width increased. The best fit lines for each species needed to be looked at to reveal the true picture.
 
-
+Key conclusions on the *Iris* data set itself are that *setosa* is most easily distginuished, as it has the smallest petal length, petal width and sepal length of the 3 species, although it tends to have the larger sepal width. There is more overlap and spread in values for all attributes across the *versicolor* and *virginica* species. The attribute-pair scatter plots did show separation for *setosa* across all attribute combinations, and although in some cases the *versicolor* and *virginica* groupings are distinguishable from each other, in other cases they completely overlap (for example sepal length vs. sepal width).  
+  
+From a coding perspective, it is clear that using Pandas and Seaborn can save significant time and effort as opposed to just using NumPy and Matplotlib. The point is to not focus on writing code for data extraction and visualization - Pandas and Seaborn can do these in a few lines - but rather to concentrate on actually analyzing the data. I decided to explore both methods as a learning exercise, and this certainly demonstrated the power, versatility and ease-of-use of the Pandas and Seaborn packages.  
 
 ## How to use this Repository
 
@@ -399,17 +410,16 @@ Since markdown doesn't support superscripts, the paragraph, quotation or figure 
 
 ## General References    
 General references are prefixed with 'g'.  
-1. [iris dataset wikipedia page](https://en.wikipedia.org/wiki/Iris_flower_data_set)  
+1. [iris data set wikipedia page](https://en.wikipedia.org/wiki/Iris_flower_data_set)  
 2. [Project Description](PANDS_Project_2024.pdf)  
-3. [About Fisher's Iris dataset](https://www.angela1c.com/projects/iris_project/the-iris-dataset/)  
-4. [Exploring the Iris flower dataset](https://eminebozkus.medium.com/exploring-the-iris-flower-dataset-4e000bcc266c)  
+3. [Linear Regression in Python](https://data36.com/linear-regression-in-python-numpy-polyfit/)
+4. [Exploring the Iris flower data set](https://eminebozkus.medium.com/exploring-the-iris-flower-dataset-4e000bcc266c)  
 5. [Pearson Correlation Coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)  
 6. [Covariance](https://en.wikipedia.org/wiki/Covariance)  
 7. [UCI Irvine Machine Learning Repository](https://archive.ics.uci.edu/dataset/53/iris)  
 8. [The Iris Dataset - A Little Bit of History and Biology](https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5)  
 9. [Iris data set in Machine Learning](https://www.geeksforgeeks.org/iris-dataset/)   
 10. [Least Squares method](https://www.ehdp.com/methods/least-squares-method-1.htm)
-11. [Linear Regression in Python](https://data36.com/linear-regression-in-python-numpy-polyfit/)
   
 ## Code References  
 Code references are prefixed with 'c'.  
