@@ -132,13 +132,12 @@ The menu options and their outputs are described in the [Program Outputs](#Progr
 
 The Pandas *corr()* method [c4] is used to establish a pairwise correlation between columns. NaN, NULL values are excluded.  
   
-The method of correlation may be one of Pearson, Kendall-Tau and Spearman. Pearson is the default, and was used in this analysis [c5]. The Pearson correlation coefficient is defined as "the ratio between the covariance of two variables and the product of their standard deviations" [g5], where covariance in probability theory and statistics is a measure of the joint variability of two random variables, X and Y, and is defined as "the expected value (or mean) of the product of the deviations of X and Y from their individual expected values"[g6] - or, in other words, how closely change in one is related to change in the other.  
+The method of correlation may be one of Pearson, Kendall-Tau and Spearman. Pearson is the default, and was used in this analysis [c5]. The Pearson correlation coefficient is defined as "the ratio between the covariance of two variables and the product of their standard deviations" [g5], where covariance in probability theory and statistics is a measure of the joint variability of two random variables, X and Y, and is defined as "the expected value (or mean) of the product of the deviations of X and Y from their individual expected values" [g6] - or, in other words, how closely change in one is related to change in the other.  
 
 Pearson's correlation coefficient is essentially a normalized measurement of the covariance, such that the result always has a value between −1 and 1 [g5]. If both increase together, the covariance will be positive. If one decreases as the other increases, the covariance will be negative, denoting an inverse relationship. This can be seen in the examples in Figure 3a and 3b.
 
 **Figures 3a and 3b - Scatter diagrams with various values of ρ, the correlation coefficient**  
-<img src="images/correlation_coefficient.png" width="375" height="200">
-<img src="images/correlation.png" width="375" height="200">  
+<img src="images/correlation_coefficient.png" width="375" height="200">    <img src="images/correlation.png" width="375" height="200">  
 Source [g5]  
 <a name="Figure_3ab"></a>
 
