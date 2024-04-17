@@ -326,7 +326,7 @@ When this option is chosen, the following correlation summary data is written to
   
 As discussed in the Correlation section [above](#Correlation), correlation is a measure of the relationship between 2 variables and considers how closely a change in one is related to a change in the other. The default method used by Pandas *corr()* is the Pearson correlation coefficient, which is normalized to between -1 and 1.  A higher correlation value **in absolute terms** implies a stronger relationship between the variables. This may be seen more clearly in the following heatmap, drawn using the Seaborn *heatmap()* function.  
     
-**Figure 12 - *Iris* correlation heatmap**  
+**Figure 12 - Iris correlation heatmap**  
 ![Iris correlation](images/corr_iris.png)  
    
 Note that it consists of 4 individual heatmaps (axes) plus one colour bar. Lighter colours denote a stronger correlation.
@@ -342,7 +342,7 @@ One interesting observation is that looking at the Iris data set overall is quit
   
 None of these approach 0.962865. So why is the coefficient for Iris so much higher? Let's look at just the scatter plot for petal length vs petal width.
 
-**Figure 13 - *Iris* petal length vs. petal width**  
+**Figure 13 - Iris petal length vs. petal width**  
 <img src="scatter_petal.png" width="280" height="280">  
 
 In this plot, while each of the individual species looks more like a cluster (less correlated), when they are considered together they appear more linear. If we just looked at *Iris setosa*, for example, it looks more like the cluster with a correlation coefficient of </= 0.4 in the example in [Figure 3b](#Figure_3ab) above - which aligns with the calculated value for *Iris setosa* of 0.331630. However, the overall set of points for Iris looks far more linear, i.e. more like the cluster with a correlation coefficient of >/= 0.8 in the example in [Figure 3b](#Figure_3ab), which again aligns with the calculated value for Iris of 0.962865. This will become clearer when we look at the best fit lines in the next section.  
