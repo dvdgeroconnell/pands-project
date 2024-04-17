@@ -141,7 +141,7 @@ Pearson's correlation coefficient is essentially a normalized measurement of the
 Source [g5]  
 <a name="Figure_3ab"></a>
 
-The lower the correlation value in absolute terms, the weaker the relationship between the x and y variables. For example, 0.8 or -0.8 implies a strong relationship between the x and y variable; whereas a correlation of 0.2 or -0.2 implies a weak relationship.  
+The lower the correlation value in absolute terms, the weaker the relationship between the x and y variables. For example, a correlation of 0.8 or -0.8 implies a strong relationship between the x and y variable; whereas a correlation of 0.2 or -0.2 implies a weak relationship.  
 Note that the Pearson correlation coefficient is symmetric: corr(X,Y) = corr(Y,X) [g5].  
 
 ## Best Fit  
@@ -153,7 +153,7 @@ The distance (usually the vertical distance) from each point to the line is call
   
 $y = mx + c$;  
   
-$m$ is the called the *slope* and $b$ is called the *intercept*.  
+$m$ is the called the *slope* and $c$ is called the *intercept*.  
   
 **Figure 4 - Linear Regression line with Residuals**  
 <img src="images/800px-Residuals_for_Linear_Regression_Fit.png" width="438" height="240">  
@@ -161,7 +161,7 @@ Source [g10]
 
 The advantage of linear regression is that it establishes a trend and allows you to make educated guesses about further values. It also allows you to identify outliers - for example, if a data point is way off the best fit line, it may merit further inspection.  
   
-A disadvantage of linear regression model is that it is very unlikely to be a perfect fit to real world data, and you lose visibility to variances within the data set - this is where the correlation coefficient is useful, as it indicates how well your the is likely to be modelled by a straight line. A higher order polynomial regression model may be a better fit, however it involves increased complexity and is less intuitive [g3].  
+A disadvantage of linear regression model is that it is very unlikely to be a perfect fit to real world data, and you lose visibility to variances within the data set - this is where the correlation coefficient is useful, as it indicates how well your data is likely to be modelled by a straight line. A higher order polynomial regression model may be a better fit, however it involves increased complexity and is less intuitive [g3].  
   
 **Figure 5 - Best Fit / Line**  
 ![linear regression](images/438px-linear_regression.png)  
@@ -188,7 +188,6 @@ The user is presented with the following menu:
     Enter choice:
 
 ### Option 1 - Statistical Summary  
-<a name="Option-1---Statistical-Summary"></a>
 
 When this option is chosen, the following summary data is written to *iris_summary.txt*.  
   
@@ -225,29 +224,30 @@ When this option is chosen, the following summary data is written to *iris_summa
     std         0.551895      0.27465       0.63588     0.322497
 
 #### Observations  
-The mean values for *Iris setosa* petal length and petal width, at 1.462cm and 0.246cm, are much smaller than for *Iris versicolor*, at 4.26cm and 1.326cm, compared to *Iris virginica* at 5.552cm and *Iris versicolor*, at 4.26cm and 1.326cm, and *Iris virginica* at 5.552cm and 2.026cm.  This detail is lost by taking the mean values across the full *Iris* data set, so we should look at the data for the individual species for the rest of this exercise.   
+<a name="Observations1"></a>
+The mean values for *Iris setosa* petal length and petal width, at 1.462cm and 0.246cm, are much smaller than for *Iris versicolor*, at 4.26cm and 1.326cm, and *Iris virginica* at 5.552cm and 2.026cm. This detail is lost by taking the mean values across the full Iris data set, so we should look at the data for the individual species for the rest of this exercise.   
   
-In fact, there is clear separation between *setosa* and the other 2 species as the maximum petal length for *setosa* is 1.9cm, which is below the minimum petal length of 3.0cm for *versicolor* and 4.5cm for *virginica*. Similarly for petal width, the maximum for *setosa* is 0.6cm, which is below the minimum of 1.0cm for *versicolor* and of 1.4cm for *virginica*.  The relatively small standard deviations for *setosa* petal length and petal width would also indicate a smaller spread.  
+In fact, there is clear separation between *Iris setosa* and the other 2 species as the maximum petal length for *Iris setosa* is 1.9cm, which is below the minimum petal length of 3.0cm for *Iris versicolor* and 4.5cm for *Iris virginica*. Similarly for petal width, the maximum for *Iris setosa* is 0.6cm, which is below the minimum of 1.0cm for *Iris versicolor* and of 1.4cm for *Iris virginica*.  The relatively small standard deviations for *Iris setosa* petal length and petal width would also indicate a smaller spread.  
     
- There is no such clear separation between *Iris versicolor* and *Iris virginica* petal lengths and petal widths. While the means are different, at 4.26cm and 5.552cm respectively, the maximum petal length for *versicolor*, the smaller of the two, overlaps the minimum petal length for *viginica*. Similarly for petal width, the maximum for *versicolor*, the smaller of the two, overlaps the minimum for *virginica*.  
+ There is no such clear separation between *Iris versicolor* and *Iris virginica* petal lengths and petal widths. While the petal length means are different, at 4.26cm and 5.552cm respectively, the maximum petal length for *Iris versicolor*, the smaller of the two, overlaps the minimum petal length for *Iris viginica*. Similarly for petal width, the maximum for *Iris versicolor*, the smaller of the two, overlaps the minimum for *Iris virginica*.  
   
 The sepal lengths and sepal widths paint a much less clear picture, as all 3 of the species overlap. Therefore, these attributes could not be used to tell the species apart. This will become clearer when we look at the histograms and scatter plots.  
   
-In summary the statistics indicate that we should consider the data for each species individually, as too much detail is lost by averaging across the iris data set as a whole.
+In summary the statistics indicate that we should consider the data for each species individually, as too much detail is lost by averaging across the iris data set as a whole.  
 
 ### Option 2 - Histograms  
 <a name="Option-2---Histograms"></a>
 
 Choosing this option causes a set of 12 histograms to be drawn, representing the 4 attributes (petal length, petal width, sepal length, sepal width) for each of the 3 species. Matplotlib's *plt.subplots()* is used to create the figure and axes. The *Axes.hist()* method is used to draw the individual subplots. The output is saved to *hist_all.png*.
   
-**Figure 6 - *Iris* attribute histograms by species**  
+**Figure 6 - Iris attribute histograms by species**  
 <img src="hist_all.png" width="900" height="600">  
 
 #### Observations  
 Each column represents an attribute, with the name for that attribute at the top of the column.    
 Each row represents a species, which are also colour coded and labelled.  
-Looking at the petal length and petal width columns, the separation of the *setosa* from the other 2 species can be clearly seen, as previously pointed out. The overlaps between *versicolor* and *virginica* can also be seen, making it more difficult to discriminate between these species on the basis of those attributes.  
-Also as previously observed, the sepal length and sepal width attributes clearly overlap for all 3 species. Those attributes cannot be used to distinguish between species.  
+Looking at the petal length and petal width columns, the separation of the *Iris setosa* from the other 2 species can be clearly seen, as previously pointed out. The overlaps between *Iris versicolor* and *Iris virginica* can also be seen, making it more difficult to discriminate between these species on the basis of those attributes.  
+Also as previously observed, the sepal length and sepal width attributes clearly overlap for all 3 species. Those attributes cannot be used to definitively distinguish between species.  
   
  ### Option 3 - Individual Histograms  
 The following histograms each represent a single attribute as a row, with a plot per species. Density plots are included and show the spread for each atribute. The output is saved to 4 files:
@@ -256,20 +256,20 @@ The following histograms each represent a single attribute as a row, with a plot
 - *hist_sepal_length.png*  
 - *hist_sepal_width.png*  
   
-**Figure 7 - *Iris* petal length histograms by species**  
+**Figure 7 - Iris petal length histograms by species**  
 <img src="hist_petal_length.png" width="750" height="250">  
    
-**Figure 8 - *Iris* petal width histograms by species**  
+**Figure 8 - Iris petal width histograms by species**  
 <img src="hist_petal_width.png" width="750" height="250">  
    
-**Figure 9 - *Iris* sepal length histograms by species**  
+**Figure 9 - Iris sepal length histograms by species**  
 <img src="hist_sepal_length.png" width="750" height="250">  
    
-**Figure 10 - *Iris* petal width histograms by species**  
+**Figure 10 - Iris petal width histograms by species**  
 <img src="hist_sepal_width.png" width="750" height="250">  
   
 #### Observations  
-This is just a slightly different way of presenting the histograms already reviewed in [Option 2](#Option-2---Histograms) above. The density plots superimposed on the histograms give a view of the spread of each attribute. As expected, those with the widest spreads as shown in the density plots (e.g. *viginica* sepal length) align with the species attributes with the largest standard deviations (std) as summarized in [Option 1](#Option-1---Statistical-Summary).
+This is just a slightly different way of presenting the histograms already reviewed in [Option 2](#Option-2---Histograms) above. The density plots superimposed on the histograms give a view of the spread of each attribute. As expected, those with the widest spreads as shown in the density plots (e.g. *Iris viginica* sepal length) align with the species attributes with the largest standard deviations (std) as summarized in [Option 1](#Option-1---Statistical-Summary).
 
 ### Option 4 - Scatter Plots  
 The attributes are plotted pairwise in scatter plots, colour-coded by species, and saved to *scatter_plt.png*.
@@ -278,16 +278,16 @@ The purpose of a scatter plot is to visualize the relationship between two attri
   
 Matplotlib's *plt.subplots()* is used to create the figure and axes. The *Axes.scatter()* method is used to draw the individual subplots.  
 
-**Figure 11a - *Iris* attribute-pair scatter plots, colour-coded by species (Matplotlib)**  
+**Figure 11a - Iris attribute-pair scatter plots, colour-coded by species (Matplotlib)**  
 <img src="scatter_plt.png" width="750" height="600">  
 
-The same plot was created using Seaborn *pairplot()* - one line of code can replace the many required using Matplotlib. Both were used as a learning exercise. The diagonal plots are density plots of the attribute by species. 
+The same plot was created using Seaborn *pairplot()* - one line of code can replace the many required using Matplotlib. Both were drawn as a learning exercise. The diagonal plots are density plots of the attribute by species.  
 
-**Figure 11b - *Iris* attribute-pair scatter plots, colour-coded by species (Seaborn)**  
+**Figure 11b - Iris attribute-pair scatter plots, colour-coded by species (Seaborn)**  
 <img src="scatter_sns.png" width="750" height="600">  
 
 #### Observations  
-1. The scatter plots reinforce the [previous conclusion](#Option-1---Statistical-Summary) that the *setosa* species is linearly separable from *versicolor* and *virginica*; however the latter 2 are not linearly separable, with significant overlap in the scatter plots [g7]. In the case of sepal length and sepal width, there is overlap between *setosa* and the other species; we have [previously noted](#Option-1---Statistical-Summary) overlap in sepal length and sepal width across all 3 species.  
+1. The scatter plots reinforce the [previous conclusion](#Observations1) that the *setosa* species is linearly separable from *versicolor* and *virginica*; however the latter 2 are not linearly separable, with significant overlap in the scatter plots [g7]. In the case of sepal length and sepal width, there is overlap between *setosa* and the other species; we have [previously noted](#Option-1---Statistical-Summary) overlap in sepal length and sepal width across all 3 species.  
 
 2. The density subplots on the diagonal of the Seaborn-generated plot also confirm [previously noted](#Option-1---Statistical-Summary) observations above, that the *setosa* petal length and petal width are tightly clustered and are smallest in size, that there is overlap between *versicolor* and *virginica* petal length and petal width; and there is broad overlap and a wider spread across all 3 species for sepal length and sepal width.  However, on the latter point, when sepal length vs sepal width is viewed in a scatter plot there is separation between *setosa* and the other 2 species.
 
