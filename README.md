@@ -331,7 +331,7 @@ When this option is chosen, the following correlation summary data is written to
 As discussed in the Correlation section [above](#Correlation), correlation is a measure of the relationship between 2 variables and considers how closely a change in one is related to a change in the other. The default method used by Pandas *corr()* is the Pearson correlation coefficient, which is normalized to between -1 and 1.  A higher correlation value **in absolute terms** implies a stronger relationship between the variables. This may be seen more clearly in the following heatmap, drawn using the Seaborn *heatmap()* function.  
     
 **Figure 12 - Iris correlation heatmap**  
-![Iris correlation](images/corr_iris.png)  
+![Iris correlation](corr_iris.png)  
    
 Note that it consists of 4 individual heatmaps (axes) plus one colour bar. Lighter colours denote a stronger correlation.
 Also note that the correlations are symmetric, as noted in the Correlation section [above](#Correlation) - so for example, Iris petal length vs petal width AND Iris petal width vs petal length are both 0.962865.
