@@ -46,7 +46,7 @@ def iris_corr(iris):
                 f.write("for each species separately, and then compare the summaries.")
 
                 # Draw the correlation heatmap for the iris dataset - only need 1 color bar
-                sns.heatmap(corr, annot=True, fmt=".2f", linewidth=.5, ax=axes[0], cbar=False)
+                sns.heatmap(corr, annot=True, fmt=".2f", linewidth=.5, ax=axes[0], vmin=-1, vmax=1, cbar=False)
                 axes[0].set_title("all iris species")
 
                 # Calculate and write the correlation for the setosa species
@@ -56,7 +56,7 @@ def iris_corr(iris):
                 f.write(str(corr))
 
                 # Draw the correlation heatmap for the setosa species - only need 1 color bar
-                sns.heatmap(corr, annot=True, fmt=".2f", linewidth=.5, ax=axes[1], cbar=False)
+                sns.heatmap(corr, annot=True, fmt=".2f", linewidth=.5, ax=axes[1], vmin=-1, vmax=1, cbar=False)
                 axes[1].set_title("setosa")
 
                 # Calculate and write the correlation for the versicolor species
@@ -66,7 +66,7 @@ def iris_corr(iris):
                 f.write(str(corr))
 
                 # Draw the correlation heatmap for the versicolor species - only need 1 color bar
-                sns.heatmap(corr, annot=True, fmt=".2f", linewidth=.5, ax=axes[2], cbar=False)
+                sns.heatmap(corr, annot=True, fmt=".2f", linewidth=.5, ax=axes[2], vmin=-1, vmax=1, cbar=False)
                 axes[2].set_title("versicolor")
 
                 # Calculate and write the correlation for the virginica species
@@ -76,7 +76,7 @@ def iris_corr(iris):
                 f.write(str(corr))
 
                 # Draw the correlation heatmap for the virginica species (with color bar) and write all to file
-                sns.heatmap(corr, annot=True, fmt=".2f", linewidth=.5, ax=axes[3], cbar=True)
+                sns.heatmap(corr, annot=True, fmt=".2f", linewidth=.5, ax=axes[3], vmin=-1, vmax=1, cbar=True)
                 axes[3].set_title("virginica")
 
                 # Configure the x and y axis labels
