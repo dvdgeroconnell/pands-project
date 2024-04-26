@@ -5,8 +5,8 @@
 |---------|-------------|
 | **Module:**  | 8632 - Programming and Scripting  |
 | **Lecturer:**  | Andrew Beatty  | 
-| **Course:**  | Diploma in Science in Computing (Data Analytics)  |
-| **Year/Semester:**  | Year 1/Semester 1  |
+| **Course:**  | Higher Diploma in Science in Computing (Data Analytics)  |
+| **Year/Semester:**  | Year 1 / Semester 1  |
 | **Student Name:**  | David O'Connell  |
 | **Student ID:**  | G00438912  |
 | **Student Email:**  | G00438912@atu.ie  |  
@@ -23,7 +23,7 @@
 
 # Purpose of this Repository  
 <a name="Purpose-of-this-Repository"></a>
-This repository contains the files associated with the Programming and Scripting final project, the subject of which is an analysis of Fisher's iris data set.  
+This repository contains the files associated with the Programming and Scripting final project, the subject of which is an analysis of Fisher's Iris data set.  
   
 Link to repository - [PANDS Project](https://github.com/dvdgeroconnell/pands-project.git).  
   
@@ -51,7 +51,7 @@ The requirement for original text and analysis is emphasized in the Project Desc
 ## Approach
 While it was left open as to whether to create a Jupyter notebook as well as the README, I decided to capture the research and analysis in the README to avoid repetition and / or cross-referencing between multiple documents.  
   
-The primary Python packages used were the NumPy, Matplotlib Pandas and Seaborn packages. For the scatter plots and best fit lines, I used both Numpy / Matplotlib and Seaborn as a comparison.  
+The primary Python packages used were the NumPy, Matplotlib Pandas and Seaborn packages. For the scatter plots and best fit lines, I used both NumPy / Matplotlib and Seaborn as a comparison.  
 
 # Background - Fisher's Iris Data Set  
 <a name="Background---Fisher's-Iris-Data-Set"></a>
@@ -121,7 +121,7 @@ This file contains a Python function to draw the pairwise scatter plots for the 
 ### write_correlation.py  
 This file contains a Python function to calculate the correlation coefficients and draw the heatmaps for the Iris data set, both overall and by species. The heatmaps are drawn as a single figure and saved to a file. The name of the file is displayed to the user. 
 ### bestfit_all.py  
-A Python function to draw the pairwise scatter plots for the Iris data set variables colour-coded by species. Best fit lines are then calculated using NumPy's ployfit method [c7] and superimposed on the scatter plots. The plots are drawn as a single figure. Seaborn is then used to create similar scatter plots with best fit lines by species for comparison. Both versions are saved to files and the names are displayed to the user.
+A Python function to draw the pairwise scatter plots for the Iris data set variables colour-coded by species. Best fit lines are then calculated using NumPy's polyfit method [c7] and superimposed on the scatter plots. The plots are drawn as a single figure. Seaborn is then used to create similar scatter plots with best fit lines by species for comparison. Both versions are saved to files and the names are displayed to the user.
 
 ## Running the Program
 Clone the GitHub repository using the link in the [Purpose of this Repository](#Purpose-of-this-Repository) section.  
@@ -171,7 +171,7 @@ A disadvantage of linear regression model is that it is very unlikely to be a pe
 ![linear regression](images/438px-linear_regression.png)  
 Source [g10]  
 
-In this program, the NumPy ployfit method is used. This method supports both linear and polynomial regression:  
+In this program, the NumPy *polyfit()* method is used. This method supports both linear and polynomial regression:  
 
 *best_fit = numpy.polyfit(x, y, order)*
 
@@ -293,7 +293,7 @@ The same plot was created using Seaborn *pairplot()* - one line of code can repl
 #### Observations  
 1. The scatter plots reinforce the [previous conclusion](#Observations1) in Option 1 that the *Iris setosa* species is linearly separable from *Iris versicolor* and *Iris virginica*; however the latter 2 are not linearly separable, with significant overlap in the scatter plots [g7]. In the case of sepal length and sepal width, there is overlap between *Iris setosa* and the other species; in Option 1, we have [previously noted](#Observations1) overlap in sepal length and sepal width across all 3 species.  
 
-2. The density subplots on the diagonal of the Seaborn-generated plot also confirm [previously noted](#Observations1) observations above, that the *Iris setosa* petal length and petal width are tightly clustered and are smallest in size, that there is overlap between *Iris versicolor* and *Iris virginica* petal length and petal width; and there is broad overlap and a wider spread across all 3 species for sepal length and sepal width.  However, on the latter point, when sepal length vs sepal width is viewed in a scatter plot there is separation between *Iris setosa* and the other 2 species.
+2. The density subplots on the diagonal of the Seaborn-generated plot also confirm [previously noted](#Observations1) observations above, that the *Iris setosa* petal length and petal width are tightly clustered and are smallest in size, that there is overlap between *Iris versicolor* and *Iris virginica* petal length and petal width; and there is broad overlap and a wider spread across all 3 species for sepal length and sepal width. However, on the latter point, when sepal length vs sepal width is viewed in a scatter plot there is separation between *Iris setosa* and the other 2 species.
 
 ### Option 5 - Correlation & Heatmaps  
 <a name="Option-5---Correlation-&-Heatmaps"></a>
@@ -399,7 +399,7 @@ One conclusion that I reached and which is likely applicable to other data sets 
 A follow on conclusion from that is that use of appropriate visualization tools and techniques can help identify misleading results from an initial analysis of summary statistics or correlation heatmaps, that may not otherwise be obvious.
 For example, the best line fits for Iris petal length versus petal width overall, as opposed to the best line fits for each species individually, clearly demonstrated that the correlation coefficient for Iris as a whole was misleading. Similarly, the best fit line for Iris petal width versus sepal width overall was completely misleading in that it implied that sepal width decreased as petal width increased. The best fit lines for each species needed to be looked at to reveal the true picture.
 
-Conclusions on the Iris data set itself are that *Iris setosa* is most easily distginuished, as it has the smallest petal length, petal width and sepal length of the 3 species, although it tends to have the larger sepal width. There is more overlap and spread in values for all attributes across the *Iris versicolor* and *Iris virginica* species. The attribute-pair scatter plots did show separation for *Iris setosa* across all pair-wise attribute combinations, and although in some cases the *Iris versicolor* and *Iris virginica* groupings are distinguishable from each other, in other cases they completely overlap (for example sepal length vs. sepal width).  
+Conclusions on the Iris data set itself are that *Iris setosa* is most easily distinguished, as it has the smallest petal length, petal width and sepal length of the 3 species, although it tends to have the larger sepal width. There is more overlap and spread in values for all attributes across the *Iris versicolor* and *Iris virginica* species. The attribute-pair scatter plots did show separation for *Iris setosa* across all pair-wise attribute combinations, and although in some cases the *Iris versicolor* and *Iris virginica* groupings are distinguishable from each other, in other cases they completely overlap (for example sepal length vs. sepal width).  
   
 A conclusion from a coding perspective is that using Pandas and Seaborn as opposed to just NumPy and Matplotlib can save significant time and effort. The point is to not focus on writing code for data extraction and visualization - Pandas and Seaborn can do these in a few lines - but rather to concentrate on actually analyzing the data. I decided to explore both methods as a learning exercise, and this certainly demonstrated the power, versatility and ease-of-use of the Pandas and Seaborn packages.  
   
